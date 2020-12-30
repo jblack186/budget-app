@@ -1,0 +1,5 @@
+resources
+    for typescript info
+    - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+    for UI styling library 
+    - https://chakra-ui.com/docs/getting-started

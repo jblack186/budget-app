@@ -10,7 +10,7 @@ type AppProps = {
 
 const MyApp: React.FC<{ Component, pageProps }> = ({ Component, pageProps }) => {
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS={true}>
       <Component {...pageProps} />
     </ChakraProvider>
 
