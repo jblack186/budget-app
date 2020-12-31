@@ -4,13 +4,13 @@ import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
 
 type AppProps = {
-  Component: String,
-  pageProps: String
+  Component: String;
+  pageProps: String;
 }
 
 const MyApp: React.FC<{ Component, pageProps }> = ({ Component, pageProps }) => {
   return (
-    <ChakraProvider resetCSS={true}>
+    <ChakraProvider resetCSS={true} >
       <Component {...pageProps} />
     </ChakraProvider>
 

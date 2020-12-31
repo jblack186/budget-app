@@ -3,3 +3,10 @@ resources
     - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
     for UI styling library 
     - https://chakra-ui.com/docs/getting-started
+
+TODO: 
+    hey Jamison,
+        I'm going to be working on the app later today. 
+        I have to work on a project for a client. 
+        I should be done around 4/5 pm. 
+        I'm going to be working passport auth and just sending it to json file for right now. until the database is setup

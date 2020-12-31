@@ -20,9 +20,7 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx", "models.js/note.js"
-  ],
+
   "exclude": [
     "node_modules"
   ]
