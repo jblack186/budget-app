@@ -4,6 +4,7 @@ import Link from 'next/link';
 // component
 
 const Index: React.FC<{}> = () => {
+
   return (
     <Flex
       height='100vh'
