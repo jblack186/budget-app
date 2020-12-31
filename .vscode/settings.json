@@ -2,6 +2,7 @@
     "cSpell.ignoreWords": [
         "chakra",
         "formik",
+        "isloading",
         "provider"
     ]
 }
