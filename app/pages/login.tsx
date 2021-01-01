@@ -5,6 +5,7 @@ import { Flex, Heading } from '@chakra-ui/react';
 import { LoginForm } from '../components/form';
 
 const Login: React.FC<{}> = ({ }) => {
+
     return (
         <Flex
             height='100vh'
