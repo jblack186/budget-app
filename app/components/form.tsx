@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Formik,
     Form,
@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
 
-
 // initialize var
 interface FormProps {
     fullName: String;
@@ -29,6 +28,8 @@ const RegisterSchema = Yup.object().shape({
     email: Yup.string().required().email(),
     password: Yup.string().required()
 });
+
+
 
 
 export const RegisterForm: React.FC<{}> = ({ }) => {
@@ -132,17 +133,44 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
 
 // login form
 
+const handleSubmits = async (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget.email.value)
+    const body = {
+      email: e.currentTarget.email.value,
+      name: e.currentTarget.name.value,
+      password: e.currentTarget.password.value,
+    };
+    const res = await fetch('/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 201) {
+      const userObj = await res.json();
+      // writing our user object to the state
+      mutate(userObj);
+    } else {
+    //   setErrorMsg(await res.text());
+    }
+  };
+
+
 
 export const LoginForm: React.FC<{}> = () => {
+    
     // show password
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+//   const [errorMsg, setErrorMsg] = useState('');
+  
 
     const initialValues: FormProps = {
         fullName: '',
         email: '',
         password: '',
     };
+
     return (
         <div>
             <Formik
@@ -160,7 +188,7 @@ export const LoginForm: React.FC<{}> = () => {
                 }}
             >
                 {({ errors, touched, handleChange, handleSubmit, isSubmitting }) => (
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmits}>
                         <FormControl id="email" mt={4}>
                             <FormLabel>Email address</FormLabel>
                             <Input
@@ -175,6 +203,21 @@ export const LoginForm: React.FC<{}> = () => {
                                 <FormHelperText>{errors.email}</FormHelperText>
                             ) : null}
                         </FormControl>
+                        <FormControl id="name" mt={4}>
+                            <FormLabel>Name</FormLabel>
+                            <Input
+                                type="name"
+                                size='lg'
+                                variant="filled"
+                                placeholder="name"
+                                onChange={handleChange}
+                            />
+                            {/* send error */}
+                            {errors.name && touched.name ? (
+                                <FormHelperText>{errors.email}</FormHelperText>
+                            ) : null}
+                        </FormControl>
+
                         <FormControl id="password" mt={4}>
                             <FormLabel>Password</FormLabel>
                             <InputGroup>
