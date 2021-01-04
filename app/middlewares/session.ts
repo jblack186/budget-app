@@ -9,6 +9,8 @@ export default function sessionMiddleware(req, res, next) {
         stringify: false,
     });
     return session({
+        resave: false,
+        saveUninitialized: false,
         secret: process.env.SESSION_SECRET,
         store: mongoStore,
     })(req, res, next);
