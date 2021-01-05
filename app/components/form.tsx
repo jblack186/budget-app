@@ -169,7 +169,7 @@ const handleLoginSubmit = async (e) => {
       body: JSON.stringify(body),
     });
     if (res.status === 201) {
-      const userObj = await res.json();
+        const userObj = await res.json();
       // writing our user object to the state
     //   mutate(userObj);
     } else {
