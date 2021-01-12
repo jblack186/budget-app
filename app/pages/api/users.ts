@@ -2,8 +2,8 @@ import nextConnect from 'next-connect';
 import bcrypt from 'bcryptjs';
 import middleware from '../../middlewares/middleware';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { parse, stringify } from 'flatted'
-
+import { parse, stringify } from 'flatted';
+import database from '../../middlewares/database';
 // typescript
 const handler = nextConnect<NextApiRequest, NextApiResponse>();
 
@@ -27,12 +27,13 @@ interface ExtendedResponse { };
 // POST /api/users
 handler.get<ExtendedRequest, ExtendedResponse>(async (req, res) => {
 
-  res.json({ user: req.user })
+
 })
   .post<ExtendedRequest, ExtendedResponse>(async (req, res, next) => {
 
     // target.values
     const { name, password, email } = req.body;
+
 
     // if (!isEmail(email)) {
     //   res.status(400).send('The email you entered is invalid.');
