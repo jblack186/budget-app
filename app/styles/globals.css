@@ -1,0 +1,32 @@
+body {
+  overflow-y:hidden;
+
+}
+
+
+.right-home-container {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  max-height: 100vh;
+  background-color: #43D8C9;
+  position: relative;
+}
+
+.rectangle-banner {
+  border-radius: 20px;
+  transform: rotate(-35deg);
+  position: absolute;
+  bottom: 50vh;
+  right: 15vw;
+  z-index: 999999;
+
+}
+
+.the-hand {
+  position: absolute;
+  height: 70vh;
+  bottom: -90px;
+  right: -18px;
+
+}
