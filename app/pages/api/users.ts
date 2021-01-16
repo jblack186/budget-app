@@ -1,3 +1,6 @@
+/* 
+  currently not in use because of new configuration to auth
+ */
 import nextConnect from 'next-connect';
 import bcrypt from 'bcryptjs';
 import middleware from '../../middlewares/middleware';
