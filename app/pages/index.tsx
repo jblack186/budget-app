@@ -30,6 +30,7 @@ const Index: React.FC<{}> = () => {
               position='relative'
               size='3xl'
               whiteSpace='nowrap'
+              zIndex='99999999999999999999'
             >
               Banking &<br />
                  Budgeting,<br />

@@ -37,7 +37,7 @@ export const Header: React.FC<{}> = ({ }) => {
                                 <rect width="75.9478" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 3 83.6086)" fill="#00303F" />
                             </g>
                         </svg>
-                        <Heading ml={5} as='h1' size='md' fontWeight={600}>in-hand.io</Heading>
+                        <Heading ml={5} as='h1' size='md'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
                     </Flex>
                     <Wrap spacing={20}>
                         <WrapItem alignItems="center">
