@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Heading, Flex, Button, Box, Text } from '@chakra-ui/react';
+import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
 // component
 import { Header } from '../components/Header/Header';
@@ -8,8 +8,11 @@ import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 
 
 const Index: React.FC<{}> = () => {
+  const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
 
+  isLargerThan786 === true;
 
+console.log('truthy', isLargerThan786)
 
   return (
     <React.Fragment>
@@ -19,7 +22,8 @@ const Index: React.FC<{}> = () => {
 
           <Box
             position='absolute'
-            left='-2em'
+            left={isLargerThan786 ? '-2em' : '50%'}
+            marginLeft={isLargerThan786 ? null : '-143px'}
             bottom='0'
             top='30%'
             transform='translate(-0%, 30)'
@@ -28,15 +32,14 @@ const Index: React.FC<{}> = () => {
             <Heading
               as='h2'
               position='relative'
-              size='3xl'
+              size={isLargerThan786 ? '4xl' : '3xl'}
               whiteSpace='nowrap'
-              zIndex='99999999999999999999'
             >
               Banking &<br />
                  Budgeting,<br />
                  Made Simple
             </Heading>
-            <Text mt={4} fontSize='3vmin' maxWidth='260px'>
+            <Text mt={4} fontSize={isLargerThan786 ? '3vmin': '5vmin'} maxWidth='260px'>
               We help set your goals
               so you don’t have too.
             </Text>

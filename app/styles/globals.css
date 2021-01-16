@@ -8,6 +8,9 @@
   background-color: #43D8C9;
   border-bottom-left-radius: 19px ;
 }
+
+
+
 .right-home-container {
   width: 10%;
   height: calc(100vh - 100px);
@@ -64,10 +67,19 @@
   max-width: 500px;
   right: -5em;
   top: 30%;
-  /* bottom: -90px;
-  right: -18px; */
   z-index: 10;
 }
+
+@media only screen and (max-width: 768px) {
+  .the-hand {
+    /* opacity: .8; */
+    top: 30%;
+    max-width: 300px;
+
+
+  }
+}
+
 
 
 .css-3z75l1 {

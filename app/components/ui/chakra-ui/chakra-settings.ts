@@ -33,6 +33,7 @@ export const ButtonSetting = {
     height: "48px",
     background: "#FFFFFF",
     borderRadius: "11px",
+    zIndex:'9999999999999999',
     _hover: {
         color: '#fff',
         backgroundColor: "#00303F",

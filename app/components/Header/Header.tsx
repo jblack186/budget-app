@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Link from 'next/Link';
+import { useMediaQuery } from '@chakra-ui/react';
+
 import {
     Flex,
     Wrap,
@@ -12,6 +14,8 @@ import {
 import { FlexSetting, ButtonSetting } from '../ui/chakra-ui/chakra-settings';
 
 export const Header: React.FC<{}> = ({ }) => {
+    const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
+
     return (
         <React.Fragment>
             <header>
@@ -27,7 +31,7 @@ export const Header: React.FC<{}> = ({ }) => {
                     Index signature is missing in type 'String'.
                 */}
                 <Flex {...FlexSetting}>
-                    <Flex alignItems="center">
+                    <Flex zIndex='999999999999999' alignItems="center">
                         <svg width="50" height="84" viewBox="0 0 88 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="88" height="84">
                                 <rect width="88" height="84" rx="42" fill="#00303F" />
@@ -37,12 +41,14 @@ export const Header: React.FC<{}> = ({ }) => {
                                 <rect width="75.9478" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 3 83.6086)" fill="#00303F" />
                             </g>
                         </svg>
-                        <Heading ml={5} as='h1' size='md'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
+                        <Heading ml={5} as='h1' size='lg'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
                     </Flex>
                     <Wrap spacing={20}>
-                        <WrapItem alignItems="center">
+                        
+                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } alignItems="center">
                             <Link href='/login'>Login</Link>
                         </WrapItem>
+                        
                         <WrapItem>
                             <Link href='/register'>
                                 <Button
@@ -52,6 +58,7 @@ export const Header: React.FC<{}> = ({ }) => {
                                 </Button>
                             </Link>
                         </WrapItem>
+                       
                     </Wrap>
                 </Flex>
             </header>

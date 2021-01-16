@@ -48,4 +48,12 @@ export const Flex = styled.div<FlexProps>`
     }
 `
 
+export const Box = styled.div<FlexProps>`
+    
+
+    ${media.tablet} {
+        display: none;
+    }
+`
+
 
