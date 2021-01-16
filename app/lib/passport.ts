@@ -10,7 +10,7 @@ passport.serializeUser((user, done) => {
 // passport#160
 passport.deserializeUser((req, id, done) => {
     req.db.collection('users')
-        .findOne(ObjectId(id))
+        .findOne(new ObjectId(id))
         .then((user) => done(null, user));
 });
 

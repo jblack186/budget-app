@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Formik,
     Form,
@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
 
-
 // initialize var
 interface FormProps {
     fullName: String;
@@ -30,6 +29,30 @@ const RegisterSchema = Yup.object().shape({
     password: Yup.string().required()
 });
 
+const handleRegisterSubmit = async (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget.email.value)
+    const body = {
+      email: e.currentTarget.email.value,
+      name: e.currentTarget.name.value,
+      password: e.currentTarget.password.value,
+    };
+    const res = await fetch('/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 201) {
+      const userObj = await res.json();
+      // writing our user object to the state
+    //   mutate(userObj);
+    } else {
+    //   setErrorMsg(await res.text());
+    }
+  };
+
+
+
 
 export const RegisterForm: React.FC<{}> = ({ }) => {
 
@@ -39,7 +62,7 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
 
 
     const initialValues: FormProps = {
-        fullName: '',
+        name: '',
         email: '',
         password: '',
     };
@@ -60,19 +83,19 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
                 }}
             >
                 {({ errors, touched, handleChange, handleSubmit, isSubmitting }) => (
-                    <Form onSubmit={handleSubmit}>
-                        <FormControl id="fullName">
-                            <FormLabel>fullName</FormLabel>
+                    <Form onSubmit={handleRegisterSubmit}>
+                        <FormControl id="name">
+                            <FormLabel>name</FormLabel>
                             <Input
-                                type="fullName"
+                                type="name"
                                 size='lg'
                                 variant="filled"
-                                placeholder="fullName"
+                                placeholder="name"
                                 onChange={handleChange}
                             />
                             {/* send error */}
-                            {errors.fullName && touched.fullName ? (
-                                <FormHelperText>{errors.fullName}</FormHelperText>
+                            {errors.name && touched.name ? (
+                                <FormHelperText>{errors.name}</FormHelperText>
                             ) : null}
                         </FormControl>
                         <FormControl id="email" mt={4}>
@@ -117,8 +140,10 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
                             size="md"
                             height="48px"
                             width="300px"
-                            border="2px"
-                            borderColor="green.500"
+                            color='#fff'
+                            // border="2px"
+                            bg='#43D8C9'
+                            borderColor="none"
                             isLoading={isSubmitting}
                             mt={6}
                         >Submit</Button>
@@ -132,17 +157,62 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
 
 // login form
 
+const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget.email.value)
+    const body = {
+      email: e.currentTarget.email.value,
+      name: e.currentTarget.name.value,
+      password: e.currentTarget.password.value,
+    };
+    const res = await fetch('/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (res.status === 201) {
+        const userObj = await res.json();
+      // writing our user object to the state
+    //   mutate(userObj);
+    } else {
+    //   setErrorMsg(await res.text());
+    }
+  };
+
+
+
 
 export const LoginForm: React.FC<{}> = () => {
+    
     // show password
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+//   const [errorMsg, setErrorMsg] = useState('');
+  
 
     const initialValues: FormProps = {
-        fullName: '',
         email: '',
         password: '',
     };
+
+    async function handleLoginSubmit(e) {
+        e.preventDefault();
+        const body = {
+          email: e.currentTarget.email.value,
+          password: e.currentTarget.password.value,
+        };
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        if (res.status === 200) {
+          const userObj = await res.json();
+        } else {
+        //   setErrorMsg('Incorrect username or password. Try again!');
+        }
+      }
+
     return (
         <div>
             <Formik
@@ -160,7 +230,7 @@ export const LoginForm: React.FC<{}> = () => {
                 }}
             >
                 {({ errors, touched, handleChange, handleSubmit, isSubmitting }) => (
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleLoginSubmit}>
                         <FormControl id="email" mt={4}>
                             <FormLabel>Email address</FormLabel>
                             <Input
