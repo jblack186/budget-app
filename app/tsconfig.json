@@ -22,7 +22,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx", "models.js/note.js"
-  ],
+,
+"middlewares/database.js"
+],
   "exclude": [
     "node_modules"
   ]
