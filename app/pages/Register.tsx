@@ -27,7 +27,7 @@ const Register: React.FC<{}> = ({ }) => {
                         direction="column"
                         pt={10}
                     >
-                        <Heading as='h1' mb={6}>Sign Up</Heading>
+                        <Heading as='h1' size='4xl' mb={6}>Sign Up</Heading>
                         <RegisterForm />
                     </Flex>
                     <Box
