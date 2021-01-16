@@ -4,6 +4,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 // theme 
 import customTheme from '../theme'
+import '../styles/globals.css'
+
 
 type AppProps = {
   Component: String;
