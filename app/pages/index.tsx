@@ -1,13 +1,6 @@
 import * as React from 'react';
-<<<<<<< HEAD
-import { Heading, Flex, Button } from '@chakra-ui/react';
-import Link from 'next/link';
-import styled from 'styled-components';
-
-=======
 import { Heading, Flex, Button, Box, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
->>>>>>> 336f9e385f9996805b9e97e38357a420f2a92a69
 // component
 import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
@@ -20,12 +13,6 @@ const Index: React.FC<{}> = () => {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
-      <div className="right-home-container">
-          <img className='rectangle-banner spotify' src="./Spotify (1).png" alt='spotify-banner'/>
-          <img className='the-hand' src="./hand1.svg" alt='hand-reaching'/>       
-      </div>
-=======
       <BoxWrapper>
         <Header />
         <div id='bg-cover'>
@@ -36,6 +23,7 @@ const Index: React.FC<{}> = () => {
             bottom='0'
             top='30%'
             transform='translate(-0%, 30)'
+            zIndex='99999999999999'
           >
             <Heading
               as='h2'
@@ -66,20 +54,36 @@ const Index: React.FC<{}> = () => {
               mt={5}
               backgroundColor='#00303F'
               color='#fff'
+              cursor='pointer'
+              zIndex='9999999999999'
               _hover={{
                 background: "#FFFFFF",
                 color: '#000'
               }}
+              
             >
               Let's Start
             </Button>
           </Box>
         </div>
         <div className="right-home-container">
-          {/* <img
+        <div>
+          <img
             className='rectangle-banner spotify'
             src="./Spotify (1).png"
-            alt='spotify-banner' /> */}
+            alt='spotify-banner' />
+                      <img
+            className='rectangle-banner loan'
+            src="./loan.png"
+            alt='spotify-banner' />
+          <img
+            className='rectangle-banner savings'
+            src="./savings.png"
+            alt='spotify-banner' />
+
+          </div>
+
+
           <img
             className='the-hand'
             src="./hand1.svg"
@@ -87,15 +91,10 @@ const Index: React.FC<{}> = () => {
           />
         </div>
       </BoxWrapper>
->>>>>>> 336f9e385f9996805b9e97e38357a420f2a92a69
     </React.Fragment> 
   )
 
 }
 
-<<<<<<< HEAD
 
 export default Index;
-=======
-export default Index;
->>>>>>> 336f9e385f9996805b9e97e38357a420f2a92a69

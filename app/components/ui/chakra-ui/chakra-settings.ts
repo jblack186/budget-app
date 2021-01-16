@@ -36,6 +36,8 @@ export const ButtonSetting = {
     _hover: {
         color: '#fff',
         backgroundColor: "#00303F",
+        cursor: "pointer",
+
     },
 } as const;
 
