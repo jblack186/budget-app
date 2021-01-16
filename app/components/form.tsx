@@ -140,8 +140,10 @@ export const RegisterForm: React.FC<{}> = ({ }) => {
                             size="md"
                             height="48px"
                             width="300px"
-                            border="2px"
-                            borderColor="green.500"
+                            color='#fff'
+                            // border="2px"
+                            bg='#43D8C9'
+                            borderColor="none"
                             isLoading={isSubmitting}
                             mt={6}
                         >Submit</Button>
@@ -169,7 +171,7 @@ const handleLoginSubmit = async (e) => {
       body: JSON.stringify(body),
     });
     if (res.status === 201) {
-      const userObj = await res.json();
+        const userObj = await res.json();
       // writing our user object to the state
     //   mutate(userObj);
     } else {

@@ -13,7 +13,7 @@ const Login: React.FC<{}> = ({ }) => {
             alignItems="center"
             direction="column"
         >
-            <Heading as='h1' mb={6}>Login</Heading>
+            <Heading as='h1' size='lg' mb={6}>Login</Heading>
             <LoginForm />
         </Flex>
     )
