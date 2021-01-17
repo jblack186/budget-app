@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { useMediaQuery } from '@chakra-ui/react';
+import { isAbsolute } from 'path';
+
+
 
 /****************** 
     layout structure 
@@ -20,6 +24,16 @@ export const FlexSetting: FlexProps = {
     maxWidth: '1400px',
     margin: 'auto',
 } as const;
+
+export const FlexSettingWelcome: FlexProps= {
+    height: '100px',
+    width: "80%",
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    maxWidth: '1400px',
+    margin: 'auto',
+} as const;
+
 
 /****************** 
     container 
