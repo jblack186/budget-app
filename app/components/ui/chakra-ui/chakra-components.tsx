@@ -12,4 +12,4 @@ export const BoxWrapper: React.FC<{}> = ({ children }) => {
             {children}
         </Box>
     );
-}
+} 

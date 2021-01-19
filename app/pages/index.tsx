@@ -10,9 +10,9 @@ import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 const Index: React.FC<{}> = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
 
-  isLargerThan786 === true;
+ 
 
-console.log('truthy', isLargerThan786)
+
 
   return (
     <React.Fragment>

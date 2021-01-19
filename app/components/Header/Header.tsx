@@ -18,6 +18,8 @@ export const Header: React.FC<{}> = ({ }) => {
     const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
     const router = useRouter()
     console.log('router',router.pathname)
+
+   
     return (
         <React.Fragment>
             <header>

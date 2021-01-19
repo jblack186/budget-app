@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+version: "3"
+
+services: 
+  db:
+    image: postgres
+    restart: "always"
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: budgetApp
+    volumes: 
+      - "./db/data:/var/lib/postgresql/data"
+      - "./db/init:/docker-entrypoint-initdb.d"
+=======
+version: "3.8"
+services: 
+  db:
+    image: "postgres:12"
+    ports: 
+      - "54320:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment: 
+      - POSTGRES_USER=nicholas
+      - POSTGRES_PASSWORD=wonderland
+      - POSTGRES_DB=mydb
+>>>>>>> 3e662fa67b8fb934efce1c13960c2d56a9224677

@@ -12,7 +12,7 @@ const Login: React.FC<{}> = ({ }) => {
             justifyContent="center"
             alignItems="center"
             direction="column"
-            zIndex='9999999999999999'
+           
         >
             <Heading as='h1' size='lg' mb={6}>Login</Heading>
             <LoginForm />
