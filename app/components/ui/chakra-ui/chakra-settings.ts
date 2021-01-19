@@ -14,6 +14,7 @@ type FlexProps = {
     alignItems: String;
     maxWidth: String;
     margin: String;
+    zIndex: String;
 }
 
 export const FlexSetting: FlexProps = {
@@ -23,10 +24,11 @@ export const FlexSetting: FlexProps = {
     alignItems: 'center',
     maxWidth: '1400px',
     margin: 'auto',
+    zIndex: '999999999999999',
 } as const;
 
 export const FlexSettingWelcome: FlexProps= {
-    height: '100px',
+    height: '20px',
     width: "80%",
     justifyContent: 'space-between',
     alignItems: 'center',

@@ -47,7 +47,7 @@ export const Header: React.FC<{}> = ({ }) => {
                     </Flex>
                     <Wrap spacing={20}>
                         
-                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } alignItems="center">
+                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } zIndex='999999999999999' alignItems="center">
                             <Link href='/login'>Login</Link>
                         </WrapItem>
                         

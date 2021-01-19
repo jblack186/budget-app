@@ -17,9 +17,9 @@ const Index: React.FC<{}> = () => {
   return (
     <React.Fragment>
       <BoxWrapper>
+        <div className='welcome-top'></div>
         <Header />
         <div id='bg-cover-welcome'>
-
           <Box
             position='absolute'
             left={!isLargerThan786 ? '10em' : '50%'}
