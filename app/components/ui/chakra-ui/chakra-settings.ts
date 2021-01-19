@@ -73,5 +73,4 @@ export const MainWrapperSetting = {
     position: 'relative',
     overflow: 'hidden',
     overflowY: 'hidden',
-    backgroundColor: 'red',
 } as const;

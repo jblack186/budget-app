@@ -48,6 +48,7 @@ export const Flex = styled.div<FlexProps>`
     }
 `
 
+<<<<<<< HEAD
 export const Box = styled.div<FlexProps>`
     
 
@@ -57,3 +58,5 @@ export const Box = styled.div<FlexProps>`
 `
 
 
+=======
+>>>>>>> 3e662fa67b8fb934efce1c13960c2d56a9224677
