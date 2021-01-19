@@ -14,12 +14,7 @@ import {
 import { FlexSetting, ButtonSetting } from '../ui/chakra-ui/chakra-settings';
 
 export const Header: React.FC<{}> = ({ }) => {
-<<<<<<< HEAD
     const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
-=======
-
-   
->>>>>>> 3e662fa67b8fb934efce1c13960c2d56a9224677
 
     return (
         <React.Fragment>
