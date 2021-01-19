@@ -4,6 +4,15 @@
         "datamodel",
         "postgres",
         "prismagraphql",
+        "provider",
+        "db",
+        "formik",
+        "isloading",
+        "middlewares",
+        "mongo",
+        "pgdata",
+        "postgres",
+        "postgresql",
         "provider"
     ]
 }

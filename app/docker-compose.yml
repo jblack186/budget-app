@@ -14,5 +14,4 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: budgetApp
     volumes: 
-      - "./db/data:/var/lib/postgresql/data"
-      - "./db/init:/docker-entrypoint-initdb.d"
+      - "./db:/var/lib/postgresql/data"

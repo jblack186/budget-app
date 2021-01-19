@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
-import { signIn, signOut, useSession } from 'next-auth/client';
 // component
 import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
