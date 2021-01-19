@@ -1,10 +1,4 @@
 import * as React from 'react';
-<<<<<<< HEAD
-import '../styles/globals.css'
-
-// dev
-=======
->>>>>>> 336f9e385f9996805b9e97e38357a420f2a92a69
 import { ChakraProvider } from '@chakra-ui/react'
 
 

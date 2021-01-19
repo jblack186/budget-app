@@ -10,24 +10,27 @@ import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 const Index: React.FC<{}> = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
 
-  isLargerThan786 === true;
+ 
 
-console.log('truthy', isLargerThan786)
+
 
   return (
     <React.Fragment>
       <BoxWrapper>
+        <div className='welcome-top'></div>
         <Header />
-        <div id='bg-cover'>
-
+        <div id='bg-cover-welcome'>
           <Box
             position='absolute'
-            left={!isLargerThan786 ? '-2em' : '50%'}
+            left={!isLargerThan786 ? '10em' : '50%'}
             marginLeft={!isLargerThan786 ? null : '-143px'}
             bottom='0'
-            top='30%'
+            top='50%'
+            marginTop='-230px'
+            color='#fff'
             transform='translate(-0%, 30)'
             zIndex='99999999999999'
+            fontWeight='bold'
           >
             <Heading
               as='h2'
@@ -35,13 +38,11 @@ console.log('truthy', isLargerThan786)
               size={!isLargerThan786 ? '4xl' : '3xl'}
               whiteSpace='nowrap'
             >
-              Banking &<br />
-                 Budgeting,<br />
-                 Made Simple
+                 Welcome to<br />
+                 In-Hand.io
             </Heading>
-            <Text mt={4} fontSize={!isLargerThan786 ? '3vmin': '5vmin'} maxWidth='260px'>
-              We help set your goals
-              so you don’t have too.
+            <Text mt={4} fontSize={!isLargerThan786 ? '5.5vmin': '5vmin'} maxWidth='560px'>
+              Take the guess work out of budgeting with an easy "50/30/20" rule
             </Text>
             {/* 
                 # Button
@@ -66,32 +67,26 @@ console.log('truthy', isLargerThan786)
               }}
               
             >
-              Let's Start
+              Continue
             </Button>
           </Box>
+          <img
+            className='pieChart'
+            src="./pieChart.svg"
+            alt='pieChart'
+          />
+
+
         </div>
         <div className="right-home-container">
         <div>
-          <img
-            className='rectangle-banner spotify'
-            src="./Spotify (1).png"
-            alt='spotify-banner' />
-                      <img
-            className='rectangle-banner loan'
-            src="./loan.png"
-            alt='spotify-banner' />
-          <img
-            className='rectangle-banner savings'
-            src="./savings.png"
-            alt='spotify-banner' />
-
           </div>
 
 
           <img
-            className='the-hand'
-            src="./hand1.svg"
-            alt='hand-reaching'
+            className='the-hand-up'
+            src="./hand2.svg"
+            alt='hand-reaching-up'
           />
         </div>
       </BoxWrapper>
