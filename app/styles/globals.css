@@ -86,7 +86,7 @@
 .the-hand-up {
   position: absolute;
   height: 70%;
-  min-height: 400px;
+  min-height: 700px;
   max-width: 500px;
   right: 10em;
   bottom: 0;
@@ -112,7 +112,13 @@
 }
 
 .pieChart {
-  z-index: '9999999999999999999999';
+  position: absolute;
+  height: 70%;
+  min-height: 1250px;
+  right: -20em;
+  bottom: -25em;
+  z-index: 5;
+  transform: rotate(-30deg);
 }
 
 .welcome-top {

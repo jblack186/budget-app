@@ -19,7 +19,7 @@ type FlexProps = {
 
 export const FlexSetting: FlexProps = {
     height: '100px',
-    width: "90%",
+    width: "75%",
     justifyContent: 'space-between',
     alignItems: 'center',
     maxWidth: '1400px',
@@ -28,7 +28,10 @@ export const FlexSetting: FlexProps = {
 } as const;
 
 export const FlexSettingWelcome: FlexProps= {
-    height: '20px',
+    position: 'absolute',
+    top: '77px',
+    left: '9em',
+    height: '0px',
     width: "80%",
     justifyContent: 'space-between',
     alignItems: 'center',

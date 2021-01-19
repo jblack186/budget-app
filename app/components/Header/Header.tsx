@@ -15,7 +15,7 @@ import {
 import { FlexSetting, ButtonSetting, FlexSettingWelcome } from '../ui/chakra-ui/chakra-settings';
 
 export const Header: React.FC<{}> = ({ }) => {
-    const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
+    const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
     const router = useRouter()
     console.log('router',router.pathname)
 
@@ -47,13 +47,13 @@ export const Header: React.FC<{}> = ({ }) => {
                         </svg>
                         <Heading ml={5} as='h1' size='lg'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
                     </Flex>
-                    <Wrap spacing={20}>
+                    <Wrap  display={router.pathname === '/welcome' ? 'none' : 'block'} spacing={20}>
                         
-                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } zIndex='999999999999999' alignItems="center">
+                        <WrapItem display={isLargerThan786 ? 'none' : 'flex'} zIndex='999999999999999' alignItems="center">
                             <Link href='/login'>Login</Link>
                         </WrapItem>
                         
-                        <WrapItem display={router.pathname === '/welcome' ? 'none' : 'block'}>
+                        <WrapItem>
                             <Link href='/register'>
                                 <Button
                                     {...ButtonSetting}

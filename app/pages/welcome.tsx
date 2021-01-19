@@ -70,11 +70,6 @@ const Index: React.FC<{}> = () => {
               Continue
             </Button>
           </Box>
-          <img
-            className='pieChart'
-            src="./pieChart.svg"
-            alt='pieChart'
-          />
 
 
         </div>
@@ -88,6 +83,12 @@ const Index: React.FC<{}> = () => {
             src="./hand2.svg"
             alt='hand-reaching-up'
           />
+                    <img
+            className='pieChart'
+            src="./pieChart.svg"
+            alt='pieChart'
+          />
+
         </div>
       </BoxWrapper>
     </React.Fragment> 

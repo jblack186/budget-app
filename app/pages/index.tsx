@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
+import { signIn, signOut, useSession } from 'next-auth/client';
 // component
 import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
@@ -9,9 +10,6 @@ import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 
 const Index: React.FC<{}> = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
-
- 
-
 
 
   return (
