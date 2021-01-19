@@ -1,102 +1,99 @@
-// import * as React from 'react';
-// import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
-// import styled from 'styled-components';
-// // component
-// import { Header } from '../components/Header/Header';
-// import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
-// import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
+import * as React from 'react';
+import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
+import styled from 'styled-components';
+// component
+import { Header } from '../components/Header/Header';
+import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
+import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 
 
-// const Welcome: React.FC<{}> = () => {
-//   const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
+const Index: React.FC<{}> = () => {
+  const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
+
+ 
 
 
 
-//   return (
-//     <React.Fragment>
-//       <BoxWrapper>
-//         <Header />
-//         <div id='bg-cover'>
+  return (
+    <React.Fragment>
+      <BoxWrapper>
+        <div className='welcome-top'></div>
+        <Header />
+        <div id='bg-cover-welcome'>
+          <Box
+            position='absolute'
+            left={!isLargerThan786 ? '10em' : '50%'}
+            marginLeft={!isLargerThan786 ? null : '-143px'}
+            bottom='0'
+            top='50%'
+            marginTop='-230px'
+            color='#fff'
+            transform='translate(-0%, 30)'
+            zIndex='99999999999999'
+            fontWeight='bold'
+          >
+            <Heading
+              as='h2'
+              position='relative'
+              size={!isLargerThan786 ? '4xl' : '3xl'}
+              whiteSpace='nowrap'
+            >
+                 Welcome to<br />
+                 In-Hand.io
+            </Heading>
+            <Text mt={4} fontSize={!isLargerThan786 ? '5.5vmin': '5vmin'} maxWidth='560px'>
+              Take the guess work out of budgeting with an easy "50/30/20" rule
+            </Text>
+            {/* 
+                # Button
 
-//           <Box
-//             position='absolute'
-//             left={isLargerThan786 ? '-2em' : '50%'}
-//             marginLeft={isLargerThan786 ? null : '-143px'}
-//             bottom='0'
-//             top='30%'
-//             transform='translate(-0%, 30)'
-//             zIndex='99999999999999'
-//           >
-//             <Heading
-//               as='h2'
-//               position='relative'
-//               size={isLargerThan786 ? '4xl' : '3xl'}
-//               whiteSpace='nowrap'
-//             >
-//               Banking &<br />
-//                  Budgeting,<br />
-//                  Made Simple
-//             </Heading>
-//             <Text mt={4} fontSize={isLargerThan786 ? '3vmin': '5vmin'} maxWidth='260px'>
-//               We help set your goals
-//               so you don’t have too.
-//             </Text>
-//             {/* 
-//                 # Button
+                current state of button(let's start) is being affect by 
+                  - css position property
+                  - Z index layer
 
-//                 current state of button(let's start) is being affect by 
-//                   - css position property
-//                   - Z index layer
-
-//                   - .right-home-container is z index is position on the outer layer
+                  - .right-home-container is z index is position on the outer layer
             
-//             */}
-//             <Button
-//               {...ButtonSetting}
-//               mt={5}
-//               backgroundColor='#00303F'
-//               color='#fff'
-//               cursor='pointer'
-//               zIndex='9999999999999'
-//               _hover={{
-//                 background: "#FFFFFF",
-//                 color: '#000'
-//               }}
+            */}
+            <Button
+              {...ButtonSetting}
+              mt={5}
+              backgroundColor='#00303F'
+              color='#fff'
+              cursor='pointer'
+              zIndex='9999999999999'
+              _hover={{
+                background: "#FFFFFF",
+                color: '#000'
+              }}
               
-//             >
-//               Let's Start
-//             </Button>
-//           </Box>
-//         </div>
-//         <div className="right-home-container">
-//         <div>
-//           <img
-//             className='rectangle-banner spotify'
-//             src="./Spotify (1).png"
-//             alt='spotify-banner' />
-//                       <img
-//             className='rectangle-banner loan'
-//             src="./loan.png"
-//             alt='spotify-banner' />
-//           <img
-//             className='rectangle-banner savings'
-//             src="./savings.png"
-//             alt='spotify-banner' />
-
-//           </div>
+            >
+              Continue
+            </Button>
+          </Box>
+          <img
+            className='pieChart'
+            src="./pieChart.svg"
+            alt='pieChart'
+          />
 
 
-//           <img
-//             className='the-hand'
-//             src="./hand1.svg"
-//             alt='hand-reaching'
-//           />
-//         </div>
-//       </BoxWrapper>
-//     </React.Fragment> 
-//   )
-
-// }
+        </div>
+        <div className="right-home-container">
+        <div>
+          </div>
 
 
-// export default Welcome;
+          <img
+            className='the-hand-up'
+            src="./hand2.svg"
+            alt='hand-reaching-up'
+          />
+        </div>
+      </BoxWrapper>
+    </React.Fragment> 
+  )
+
+}
+
+
+export default Index;

@@ -6,8 +6,21 @@
   width: 85%;
   height: 90vh;
   background-color: #43D8C9;
-  border-bottom-left-radius: 19px ;
+  border-bottom-left-radius: 19px;
 }
+
+#bg-cover-welcome {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  height: 90vh;
+  background-color: #43D8C9;
+  border-top-right-radius: 19px;
+}
+
+
+
 
 
 
@@ -70,6 +83,17 @@
   z-index: 10;
 }
 
+.the-hand-up {
+  position: absolute;
+  height: 70%;
+  min-height: 400px;
+  max-width: 500px;
+  right: 10em;
+  bottom: 0;
+  z-index: 10;
+}
+
+
 @media only screen and (max-width: 768px) {
   .the-hand {
     /* opacity: .8; */
@@ -86,4 +110,14 @@
   height: 100vh;
   max-height: 100vh;
 }
+
+.pieChart {
+  z-index: '9999999999999999999999';
+}
+
+.welcome-top {
+  height: 100px;
+}
+
+
 

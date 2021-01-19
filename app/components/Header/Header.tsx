@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'next/Link';
 import { useMediaQuery } from '@chakra-ui/react';
+import { useRouter } from 'next/router'
 
 import {
     Flex,
@@ -11,11 +12,12 @@ import {
 } from '@chakra-ui/react';
 
 // component 
-import { FlexSetting, ButtonSetting } from '../ui/chakra-ui/chakra-settings';
+import { FlexSetting, ButtonSetting, FlexSettingWelcome } from '../ui/chakra-ui/chakra-settings';
 
 export const Header: React.FC<{}> = ({ }) => {
     const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
-
+    const router = useRouter()
+    console.log('router',router.pathname)
     return (
         <React.Fragment>
             <header>
@@ -30,7 +32,7 @@ export const Header: React.FC<{}> = ({ }) => {
                     Type 'String' is not assignable to type 'ResponsiveObject<Margin<ReactText>>'.
                     Index signature is missing in type 'String'.
                 */}
-                <Flex {...FlexSetting}>
+                <Flex {...router.pathname === '/welcome' ? {...FlexSettingWelcome} : {...FlexSetting}}>
                     <Flex zIndex='999999999999999' alignItems="center">
                         <svg width="50" height="84" viewBox="0 0 88 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="88" height="84">
@@ -45,11 +47,11 @@ export const Header: React.FC<{}> = ({ }) => {
                     </Flex>
                     <Wrap spacing={20}>
                         
-                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } alignItems="center">
+                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } zIndex='999999999999999' alignItems="center">
                             <Link href='/login'>Login</Link>
                         </WrapItem>
                         
-                        <WrapItem>
+                        <WrapItem display={router.pathname === '/welcome' ? 'none' : 'block'}>
                             <Link href='/register'>
                                 <Button
                                     {...ButtonSetting}
