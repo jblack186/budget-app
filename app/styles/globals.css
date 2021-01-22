@@ -93,10 +93,52 @@
   z-index: 10;
 }
 
+.the-thumbs-up {
+  position: absolute;
+  height: 70%;
+  min-height: 700px;
+  max-width: 500px;
+  right: 0em;
+  bottom: 0;
+  z-index: 10;
+}
+
+.the-phone-up {
+  position: absolute;
+  height: 70%;
+  min-height: 700px;
+  max-width: 500px;
+  right: 0em;
+  bottom: 0;
+  z-index: 10;
+}
+
+
+
+@media only screen and (max-width: 1128px) {
+  .the-hand-up {
+    max-width: 250px;
+    bottom: -10em;
+
+
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .the-hand-up {
+    right: 2em;
+    bottom: -7em;
+    max-width: 200px;
+
+
+  }
+}
+
+
+
 
 @media only screen and (max-width: 768px) {
   .the-hand {
-    /* opacity: .8; */
     top: 30%;
     max-width: 300px;
 
@@ -113,17 +155,53 @@
 
 .pieChart {
   position: absolute;
-  height: 70%;
   min-height: 1250px;
-  right: -20em;
-  bottom: -25em;
+  right: -18em;
+  bottom: -23em;
   z-index: 5;
   transform: rotate(-30deg);
 }
+
+@media only screen and (max-width: 1128px) {
+  .pieChart {
+    min-height: 800px;
+    right: -4em;
+    top: -10em;
+  
+
+
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .pieChart {
+    display: none;
+
+
+  }
+}
+
+
+
 
 .welcome-top {
   height: 100px;
 }
 
+.slider-wrapper {
+  background-color: yellow;
 
+}
+
+.carousel-wrapper {
+  background-color: yellow;
+}
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
 

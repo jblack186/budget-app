@@ -1,31 +1,36 @@
-import * as React from 'react';
+import React,{useState} from 'react';
+import WelcomeTwo from './welcomeTwo';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
 // component
-import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
+import { motion } from "framer-motion";
 
-
-const Index: React.FC<{}> = () => {
+const Welcome = (props) => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
+  const [isLargerThan1128] = useMediaQuery("(max-width: 1128px)")
+  const [open, setOpen] = useState(true);
+  const [openSecondComponent, setOpenSecondComponent] = useState(false);
 
- 
+ console.log('props',props)
 
-
+const close = () => {
+  setOpen(false);
+}
 
   return (
     <React.Fragment>
+    <div className={open ? 'block' : 'close'}>
       <BoxWrapper>
         <div className='welcome-top'></div>
-        <Header />
         <div id='bg-cover-welcome'>
           <Box
             position='absolute'
             left={!isLargerThan786 ? '10em' : '50%'}
             marginLeft={!isLargerThan786 ? null : '-143px'}
             bottom='0'
-            top='50%'
+            top={!isLargerThan1128 ? '50%' : '45%'}
             marginTop='-230px'
             color='#fff'
             transform='translate(-0%, 30)'
@@ -55,6 +60,7 @@ const Index: React.FC<{}> = () => {
             
             */}
             <Button
+            onClick={close}
               {...ButtonSetting}
               mt={5}
               backgroundColor='#00303F'
@@ -91,10 +97,23 @@ const Index: React.FC<{}> = () => {
 
         </div>
       </BoxWrapper>
-    </React.Fragment> 
+      </div> 
+      <motion.section 
+        animate={{
+          y: ['1000px', '0px']  
+        }}
+        transition={{ duration: .5 }}            
+       
+      className={open ? 'close' : 'open'}>
+        <WelcomeTwo />
+      </motion.section>
+
+
+   
+    </React.Fragment>
   )
 
 }
 
 
-export default Index;
+export default Welcome;

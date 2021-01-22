@@ -1,30 +1,46 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
-import { signIn, signOut, useSession } from 'next-auth/client';
 // component
-import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
+import WelcomeThree from './welcomeThree';
+import { motion } from "framer-motion";
 
-const Index: React.FC<{}> = () => {
+
+const WelcomeTwo = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
+  const [isLargerThan1128] = useMediaQuery("(max-width: 1128px)")
+  const [openSecondComponents, setOpenSecondComponents] = useState(true);
+  const [openThirdComponent, setOpenThirdComponent] = useState(false);
+
+
+ const closeTwo = () => {
+  setOpenSecondComponents(false);
+
+  // setOpenThirdComponent(true);
+}
 
 
   return (
     <React.Fragment>
-      <BoxWrapper>
-        <Header />
-        <div id='bg-cover'>
 
+<div className={openSecondComponents ? 'block' : 'close'}>
+
+      <BoxWrapper>
+        <div className='welcome-top'></div>
+        <div id='bg-cover-welcome'>
           <Box
             position='absolute'
-            left={!isLargerThan786 ? '-2em' : '50%'}
+            left={!isLargerThan786 ? '10em' : '50%'}
             marginLeft={!isLargerThan786 ? null : '-143px'}
             bottom='0'
-            top='30%'
+            top={!isLargerThan1128 ? '50%' : '45%'}
+            marginTop='-230px'
+            color='#fff'
             transform='translate(-0%, 30)'
             zIndex='99999999999999'
+            fontWeight='bold'
           >
             <Heading
               as='h2'
@@ -32,13 +48,11 @@ const Index: React.FC<{}> = () => {
               size={!isLargerThan786 ? '4xl' : '3xl'}
               whiteSpace='nowrap'
             >
-              Banking &<br />
-                 Budgeting,<br />
-                 Made Simple
+                 In-Hand.io Uses<br />
+                 Realtime Data
             </Heading>
-            <Text mt={4} fontSize={!isLargerThan786 ? '3vmin': '5vmin'} maxWidth='260px'>
-              We help set your goals
-              so you don’t have too.
+            <Text mt={4} fontSize={!isLargerThan786 ? '5.5vmin': '5vmin'} maxWidth='560px'>
+              We connect securely to your accounts with the Plaid API
             </Text>
             {/* 
                 # Button
@@ -51,6 +65,7 @@ const Index: React.FC<{}> = () => {
             
             */}
             <Button
+            onClick={closeTwo}
               {...ButtonSetting}
               mt={5}
               backgroundColor='#00303F'
@@ -63,39 +78,48 @@ const Index: React.FC<{}> = () => {
               }}
               
             >
-              Let's Start
+              Continue
             </Button>
           </Box>
+
+
         </div>
         <div className="right-home-container">
         <div>
-          <img
-            className='rectangle-banner spotify'
-            src="./Spotify (1).png"
-            alt='spotify-banner' />
-                      <img
-            className='rectangle-banner loan'
-            src="./loan.png"
-            alt='spotify-banner' />
-          <img
-            className='rectangle-banner savings'
-            src="./savings.png"
-            alt='spotify-banner' />
-
           </div>
 
 
           <img
-            className='the-hand'
-            src="./hand1.svg"
-            alt='hand-reaching'
+            className='the-thumbs-up'
+            src="./hand3.svg"
+            alt='hand-reaching-up'
           />
+                    <img
+            className='pieChart'
+            src="./pieChart.svg"
+            alt='pieChart'
+          />
+
         </div>
+
       </BoxWrapper>
-    </React.Fragment> 
+      </div>
+      <motion.section 
+           animate={{
+            x: ['1000px', '0px']
+          
+          }}
+          transition={{ duration: .5 }}            
+      className={openSecondComponents ? 'close' : 'open'}>
+        <WelcomeThree />
+      </motion.section>
+
+
+    </React.Fragment>
+
   )
 
 }
 
 
-export default Index;
+export default WelcomeTwo;

@@ -30,7 +30,7 @@ export const FlexSetting: FlexProps = {
 export const FlexSettingWelcome: FlexProps= {
     position: 'absolute',
     top: '77px',
-    left: '9em',
+    left: '20px',
     height: '0px',
     width: "80%",
     justifyContent: 'space-between',

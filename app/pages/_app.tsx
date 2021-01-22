@@ -3,6 +3,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Provider } from 'next-auth/client'
 // theme 
 import customTheme from '../theme'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import '../styles/globals.css'
 
 

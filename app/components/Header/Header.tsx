@@ -34,7 +34,7 @@ export const Header: React.FC<{}> = ({ }) => {
                     Type 'String' is not assignable to type 'ResponsiveObject<Margin<ReactText>>'.
                     Index signature is missing in type 'String'.
                 */}
-                <Flex {...router.pathname === '/welcome' ? {...FlexSettingWelcome} : {...FlexSetting}}>
+                <Flex {...router.pathname === '/carousel' ? {...FlexSettingWelcome} : {...FlexSetting}}>
                     <Flex zIndex='999999999999999' alignItems="center">
                         <svg width="50" height="84" viewBox="0 0 88 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="88" height="84">
@@ -47,7 +47,7 @@ export const Header: React.FC<{}> = ({ }) => {
                         </svg>
                         <Heading ml={5} as='h1' size='lg'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
                     </Flex>
-                    <Wrap  display={router.pathname === '/welcome' ? 'none' : 'block'} spacing={20}>
+                    <Wrap  display={router.pathname === '/carousel' ? 'none' : 'block'} spacing={20}>
                         
                         <WrapItem display={isLargerThan786 ? 'none' : 'flex'} zIndex='999999999999999' alignItems="center">
                             <Link href='/login'>Login</Link>

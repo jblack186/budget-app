@@ -48,15 +48,3 @@ export const Flex = styled.div<FlexProps>`
     }
 `
 
-<<<<<<< HEAD
-export const Box = styled.div<FlexProps>`
-    
-
-    ${media.tablet} {
-        display: none;
-    }
-`
-
-
-=======
->>>>>>> 3e662fa67b8fb934efce1c13960c2d56a9224677
