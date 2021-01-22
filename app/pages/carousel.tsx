@@ -1,22 +1,27 @@
 import React,{useState} from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Welcome from './welcome';
-import WelcomeTwo from './welcomeTwo';
-import WelcomeThree from './welcomeThree';
 import { Header } from '../components/Header/Header';
+import { motion } from "framer-motion";
 
 
 const CarouselComponent = () => {
-  const [openSecondComponent, setOpenSecondComponent] = useState(false);
-  const [openThirdComponent, setOpenThirdComponent] = useState(false);
 
   return (
   <div>
-            <Header />
+    <Header />
 
-   <section>
+   <motion.section
+         animate={{
+          y: ['-1000px', '0px'],
+          type: "tween",
+          
+        }}
+        transition={{ duration: .5 }}            
+   
+   >
      <Welcome/>
-   </section>
+   </motion.section>
   </div>
   );
 }

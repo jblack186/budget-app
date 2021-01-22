@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/Link';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { signIn, signOut, useSession } from 'next-auth/client';
@@ -50,7 +51,7 @@ const Index: React.FC<{}> = () => {
                   - .right-home-container is z index is position on the outer layer
             
             */}
-            <Button
+            <Link href='/carousel'><Button
               {...ButtonSetting}
               mt={5}
               backgroundColor='#00303F'
@@ -64,7 +65,7 @@ const Index: React.FC<{}> = () => {
               
             >
               Let's Start
-            </Button>
+            </Button></Link>
           </Box>
         </div>
         <div className="right-home-container">

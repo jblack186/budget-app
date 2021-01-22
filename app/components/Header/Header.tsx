@@ -17,7 +17,6 @@ import { FlexSetting, ButtonSetting, FlexSettingWelcome } from '../ui/chakra-ui/
 export const Header: React.FC<{}> = ({ }) => {
     const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
     const router = useRouter()
-    console.log('router',router.pathname)
 
    
     return (

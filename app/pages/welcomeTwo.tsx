@@ -1,7 +1,5 @@
 import React,{useState} from 'react';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
-import styled from 'styled-components';
-// component
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 import WelcomeThree from './welcomeThree';
@@ -12,13 +10,11 @@ const WelcomeTwo = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
   const [isLargerThan1128] = useMediaQuery("(max-width: 1128px)")
   const [openSecondComponents, setOpenSecondComponents] = useState(true);
-  const [openThirdComponent, setOpenThirdComponent] = useState(false);
 
 
  const closeTwo = () => {
   setOpenSecondComponents(false);
 
-  // setOpenThirdComponent(true);
 }
 
 

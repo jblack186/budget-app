@@ -1,8 +1,6 @@
 import React,{useState} from 'react';
 import WelcomeTwo from './welcomeTwo';
 import { Heading, Flex, Button, Box, Text, useMediaQuery } from '@chakra-ui/react';
-import styled from 'styled-components';
-// component
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 import { motion } from "framer-motion";
@@ -11,9 +9,7 @@ const Welcome = (props) => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
   const [isLargerThan1128] = useMediaQuery("(max-width: 1128px)")
   const [open, setOpen] = useState(true);
-  const [openSecondComponent, setOpenSecondComponent] = useState(false);
 
- console.log('props',props)
 
 const close = () => {
   setOpen(false);
