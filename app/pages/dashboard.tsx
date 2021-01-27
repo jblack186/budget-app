@@ -1,4 +1,6 @@
 import React,{useState} from 'react';
+import TopDashboard from './topDashBoard';
+import MidDashboard from './midDashboard';
 
 
 
@@ -7,9 +9,8 @@ const Dashboard = () => {
 
   return (
     <React.Fragment>
-  
-    <div>Helo</div>
-   
+      <TopDashboard />
+      <MidDashboard />
     </React.Fragment>
   )
 

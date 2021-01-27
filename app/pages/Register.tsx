@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Flex, Heading, Box } from '@chakra-ui/react';
 
+
 // components
 import { RegisterForm } from '../components/form';
 import { Header } from '../components/Header/Header';

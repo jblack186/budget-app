@@ -24,7 +24,7 @@ const topDashboard = () => {
             </div>
             <div className='funds'>
               <p className='available'>Available funds</p>
-              <p>68.789,56</p>
+              <p className='account-amount'>$68.789,56</p>
             </div>
           </div>
         </div>
