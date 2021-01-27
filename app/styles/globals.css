@@ -205,3 +205,185 @@
   display: none;
 }
 
+
+/* Top Dashboard */
+
+body {
+  background: rgb(212, 212, 212);
+}
+
+.top-dash-container {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 85%;
+  height: 300px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+@media only screen and (max-width: 1024px) {
+  .top-dash-container {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+  }
+}
+
+
+.left-top-dash {
+  background: white;
+  width: 55%;
+  height: 100%;
+  border-radius: 10px;
+
+}
+
+
+.left-top-dash-flex {
+  margin: 0 auto;
+  width: 95%;
+  height: 100%;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+@media only screen and (max-width: 968px) {
+  .left-top-dash-flex {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+.main-account {
+  padding-bottom: 30px;
+  color: gray;
+
+}
+
+.user-bank {
+  font-weight: bold;
+ 
+}
+
+.account-number {
+  padding-top: 10px;
+  color: gray;
+
+}
+
+.main-account-buttons {
+  width: 350px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-top-dash-flex button {
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+}
+
+.left-top-dash-flex button.spending-button {
+  background: url('/button.png');
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+
+}
+
+.main-account-container {
+
+}
+
+.right-top-dash {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  background: #43D8C9;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.funds {
+  line-height: 60px;
+  font-size: 1rem;
+}
+
+.available {
+  color: gray;
+
+}
+
+.calendar-container .carousel .slide { 
+  background-color: #43D8C9; 
+}
+
+.calendar-content {
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  
+}
+
+.calendar-flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.calendar-flex h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  
+}
+
+.calendar-flex p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  
+}
+
+
+.calendar-container button.set-goals {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  width: 150px;
+}
+
+
+#calendar {
+  width: 80px;
+  align-self: flex-end;
+}
