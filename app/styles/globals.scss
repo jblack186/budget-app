@@ -250,6 +250,8 @@ body {
   justify-content: center;
 }
 
+
+
 .stock-bar {
   height: 50px;
 }
@@ -258,19 +260,40 @@ body {
   display: flex;
 }
 
+@media only screen and (max-width: 1024px) {
+  .nav-dash{
+    flex-direction: column;
+    }
+}
+
+
 .nav-holder {
   width: 10%;
 }
 
+// @media only screen and (max-width: 1024px) {
+//   .nav-holder {
+//     display: none;
+//     }
+// }
+
+
 .dashboard-container {
   padding-top: 50px;
   padding-bottom: 50px;
-
   margin: 0 auto;
   width: 90%;
   background: #EEEFF3;
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .dashboard-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    }
+}
+
 
 .top-dash-container {
   margin: 0 auto;
@@ -823,7 +846,6 @@ body {
 
 /* STOCK BAR */
 
-* { box-sizing: border-box; }
 $duration: 30s;
 
 @-webkit-keyframes ticker {
