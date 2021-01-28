@@ -556,9 +556,9 @@ body {
   margin: 0 auto;
   width: 90%;
   height: 100%;
-  padding-top: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   
 }
 
@@ -588,7 +588,7 @@ body {
 }
 
 .category {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
@@ -626,7 +626,7 @@ body {
 
   .needs-category {
     color: #43D8C9;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bolder;
 
   }
@@ -857,7 +857,13 @@ body {
 
 /* STOCK BAR */
 
-$duration: 30s;
+ .ticker-text {
+  color: yellow;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+$duration: 60s;
 
 @-webkit-keyframes ticker {
   0% {
