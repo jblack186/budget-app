@@ -6,7 +6,7 @@ import { PieChart } from 'react-minimal-pie-chart';
 
 
 
-const bottomDashboard = () => {
+const bottomDashboard = (props) => {
 
 
   return (
