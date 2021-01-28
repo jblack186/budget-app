@@ -24,23 +24,23 @@ const Navbar = (props) => {
                         <h1>in-hand.IO</h1>
                         </div>
           <li>
-            <FontAwesomeIcon style={props.dark ? {color: 'white'} : {color: '#00303F'}} className='home-icon' icon={faHome} />
+            <FontAwesomeIcon className={props.dark ? 'home-icon-dark' : 'home-icon'}  icon={faHome} />
             <p>Home</p>
           </li>
           <li>
-            <FontAwesomeIcon  style={props.dark ? {color: 'white'} : {color: '#00303F'}} className='home-icon' icon={faUser} />
+            <FontAwesomeIcon  className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faUser} />
             <p>Account</p>
           </li>
           <li>
-            <FontAwesomeIcon  style={props.dark ? {color: 'white'} : {color: '#00303F'}} className='home-icon' icon={faCog} />
+            <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'}icon={faCog} />
             <p>Settings</p>
           </li>
           <li>
-            <FontAwesomeIcon  style={props.dark ? {color: 'white'} : {color: '#00303F'}} className='home-icon' icon={faSignInAlt} />
+            <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faSignInAlt} />
             <p>Sign in</p>
           </li>
           <li>
-            <FontAwesomeIcon  style={props.dark ? {color: 'white'} : {color: '#00303F'}} className='home-icon' icon={faSignOutAlt} />
+            <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faSignOutAlt} />
             <p>Sign out</p>
           </li>
           </div>

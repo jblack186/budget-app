@@ -7,7 +7,6 @@ import { Carousel } from "react-responsive-carousel";
 const topDashboard = (props) => {
   const [value, onChange] = useState(new Date());
 
-console.log('pr',props)
   return (
     <React.Fragment>
       <section className='top-dash-container'>
