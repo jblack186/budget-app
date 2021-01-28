@@ -45,7 +45,10 @@
     "react-bootstrap": "^1.4.3",
     "react-calendar": "^3.3.0",
     "react-dom": "17.0.1",
+    "react-minimal-pie-chart": "^8.1.0",
+    "react-page-visibility": "^6.4.0",
     "react-responsive-carousel": "^3.2.11",
+    "react-ticker": "^1.2.2",
     "sass": "^1.32.0",
     "swr": "^0.3.11",
     "yup": "^0.32.8"
