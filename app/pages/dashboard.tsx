@@ -3,6 +3,8 @@ import TopDashboard from './topDashboard';
 import MidDashboard from './midDashboard';
 import Bottomdashboard from './bottomDashboard';
 import Navbar from './navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -47,14 +49,18 @@ useEffect(() => {
   return (
     <React.Fragment>
       <div className='full-dashboard-contain'>
-      {/* News bar */}
+      {/* News bar */}       
         <section className='stock-bar'>
           <div className="ticker-wrap">
             <div className="ticker">
-            <a href={url[0]}><div className="ticker__item">{article[0]}<span className='ticker-text'>click to read</span></div></a>
-            <a href={url[1]}><div className="ticker__item">{article[1]}<span className='ticker-text'>click to read</span></div></a>
-            <a href={url[2]} className='ticker-text'><div className="ticker__item">{article[2]}<span className='ticker-text'>click to read</span></div></a>
-              <a href={url[3]}><div className="ticker__item">{article[3]}<span className='ticker-text'>click to read</span></div></a>
+            <a href={url[0]} target={url[0]}><div className="ticker__item"><div className='ticker-it'>{article[0]}<p className='ticker-text'>click to read             
+            </p><img className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+            <a href={url[1]} target={url[1]}><div className="ticker__item"><div className='ticker-it'>{article[1]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+            <a href={url[2]} target={url[2]} className='ticker-text'><div className="ticker__item"><div className='ticker-it'>{article[2]}<p className='ticker-text'>click to read</p><img  className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[3]} target={url[3]}><div className="ticker__item"><div className='ticker-it'>{article[3]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[4]} target={url[4]}><div className="ticker__item"><div className='ticker-it'>{article[4]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[5]} target={url[5]}><div className="ticker__item"><div className='ticker-it'>{article[5]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+
             </div>
           </div>
         </section>
@@ -64,17 +70,23 @@ useEffect(() => {
           </div>
           {/* Light and Dark Mode Button */}
           <section className={!dark ? 'dashboard-container' : 'dashboard-container-dark'}>
-            <div className='mode-container'>
-              <div className="toggle-button-cover">
-                <div className="button-cover">
-                  <div className="button r" id="button-4">
-                    <input onClick={mode} type="checkbox" className="checkbox"></input>
-                    <div className="knobs"></div>
-                    <div className="layer"></div>
+            <div className='profile-mode'>
+            <p className='name'>Hello Jamison!</p>
+            <FontAwesomeIcon  className='profile-pic-holder' icon={faUser} />
+
+              <div className='mode-container'>
+                <div className="toggle-button-cover">
+                  <div className="button-cover">
+                    <div className="button r" id="button-4">
+                      <input onClick={mode} type="checkbox" className="checkbox"></input>
+                      <div className="knobs"></div>
+                      <div className="layer"></div>
+                    </div>
                   </div>
                 </div>
+                <p className='modes'>{text}</p>
               </div>
-              <p className='modes'>{text}</p>
+
             </div>
             <div className='dash-labels'>
               <p className='dash-account'>Account</p>
