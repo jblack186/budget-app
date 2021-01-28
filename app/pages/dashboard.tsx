@@ -60,7 +60,7 @@ useEffect(() => {
         </section>
         <div className='nav-dash'>
           <div className='nav-holder'>
-            <Navbar />
+            <Navbar dark={dark} />
           </div>
           {/* Light and Dark Mode Button */}
           <section className={!dark ? 'dashboard-container' : 'dashboard-container-dark'}>
@@ -76,8 +76,18 @@ useEffect(() => {
               </div>
               <p className='modes'>{text}</p>
             </div>
-            <TopDashboard dark={dark} />
+            <div className='dash-labels'>
+              <p className='dash-account'>Account</p>
+              <p className='dash-calendar'>Calendar</p>
+            </div>
+            <TopDashboard />
+            <div className='dash-labels'>
+              <p>Monitoring</p>
+            </div>
             <MidDashboard dark={dark} />
+            <div className='dash-labels'>
+              <p>Transactions</p>
+            </div>
             <Bottomdashboard dark={dark} />
           </section>
         </div>
