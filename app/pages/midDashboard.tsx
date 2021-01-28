@@ -4,7 +4,7 @@ import { faEllipsisV, faHome, faShoppingBag, faDollarSign} from '@fortawesome/fr
 
 
 
-const MidDashboard = () => {
+const MidDashboard = (props) => {
 
 
   return (

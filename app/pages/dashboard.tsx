@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import TopDashboard from './topDashboard';
 import MidDashboard from './midDashboard';
 import Bottomdashboard from './bottomDashboard';
@@ -7,7 +7,27 @@ import Navbar from './navbar';
 
 
 const Dashboard = () => {
+  const [dark, setDark] = useState(false);
+  const [text, setText] = useState('Light mode');
+console.log(dark)
+const mode = () => {
+  setDark(!dark);
+  console.log(dark)
+}
 
+useEffect(() => {
+  if (dark) {
+    document.body.style.background = '#040305'
+    setText('Dark mode')
+  } else if(!dark){
+    document.body.style.background = '#F8F8F8'
+    setText('Light mode')
+
+  } else {
+    null
+  }
+
+}, [dark])
 
   return (
     <React.Fragment>
@@ -29,10 +49,25 @@ const Dashboard = () => {
           <div className='nav-holder'>
             <Navbar />
           </div>
-          <section className='dashboard-container'>
-            <TopDashboard />
-            <MidDashboard />
-            <Bottomdashboard />
+          <section className={!dark ? 'dashboard-container' : 'dashboard-container-dark'}>
+          <div className='mode-container'>
+          <div className="toggle-button-cover">
+      <div className="button-cover">
+        <div className="button r" id="button-4">
+          <input onClick={mode} type="checkbox" className="checkbox"></input>
+          <div className="knobs"></div>
+          <div className="layer"></div>
+      
+     </div>
+   </div>
+    </div>
+  <p className='modes'>{text}</p>
+    </div>
+
+    
+                <TopDashboard dark={dark} />
+            <MidDashboard dark={dark} />
+            <Bottomdashboard dark={dark} />
           </section>
         </div>
       </div>
