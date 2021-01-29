@@ -9,7 +9,10 @@ class MyDocument extends Document {
     render() {
         return (
             <Html>
-                <Head />
+               <Head />
+               <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+                    </style> 
                 <body>
                     <Main />
                     <NextScript />

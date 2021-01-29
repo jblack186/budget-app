@@ -112,7 +112,7 @@ useEffect(() => {
 //Getting news from nytimes api
 Dashboard.getInitialProps = async (ctx) => {
   const {query} = ctx
-  const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=financial&api-key=9cD9AxIl2LjbhsKBMQE11D1y5vAjuxzf&facet_fields=source&facet=true&begin_date=20200101&end_date=20200831
+  const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=finance&api-key=9cD9AxIl2LjbhsKBMQE11D1y5vAjuxzf&facet_fields=source&facet=true&begin_date=20200101&end_date=20200831
   ` );
   const data = await res.json();
 
