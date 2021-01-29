@@ -3,7 +3,7 @@
                                 <rect width="88" height="84" rx="42" fill="white" />
                             </mask>
                             <g mask="url(#mask0)">
-                                <rect width="69.2338" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 12 11.1072)" fill="white" />
-                                <rect width="75.9478" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 3 83.6086)" fill="white" />
+                                <rect width="69.2338" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 12 11.1072)" fill="#43D8C9" />
+                                <rect width="75.9478" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 3 83.6086)" fill="#f8f8f8" />
                             </g>
                         </svg>

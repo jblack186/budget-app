@@ -284,6 +284,8 @@
 
 
 
+
+
 .navbar-container.dark li {
     list-style: none;
     display: flex;
@@ -307,13 +309,20 @@
 }
 
 
+.home-icon.out {
+  transform: rotate(180deg);
+}
+
+.home-icon-dark.out {
+  transform: rotate(180deg);
+}
 
 
 /* Top Dashboard */
 
 body {
-
-  background: #F8F8F8;
+  font-family: 'Nunito Sans', sans-serif;
+    background: #F8F8F8;
 }
 
 

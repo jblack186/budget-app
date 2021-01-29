@@ -40,7 +40,7 @@ const Navbar = (props) => {
             <p>Sign in</p>
           </li>
           <li>
-            <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faSignOutAlt} />
+            <FontAwesomeIcon   className={props.dark ? 'home-icon-dark out' : 'home-icon out'} icon={faSignOutAlt} />
             <p>Sign out</p>
           </li>
           </div>
