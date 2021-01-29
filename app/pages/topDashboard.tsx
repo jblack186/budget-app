@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Calendar from 'react-calendar';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-
+import {motion} from 'framer-motion';
 
 const topDashboard = (props) => {
   const [value, onChange] = useState(new Date());
@@ -10,7 +10,11 @@ const topDashboard = (props) => {
   return (
     <React.Fragment>
       <section className='top-dash-container'>
-        <div className='left-top-dash'>
+        <motion.div 
+        initial={{scale: 0}}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+        className='left-top-dash'>
           <div className='left-top-dash-flex'>
             <div className='main-account-container'>
               <p className='main-account'>Main account</p>
@@ -26,8 +30,13 @@ const topDashboard = (props) => {
               <p className='account-amount'>$68.789,56</p>
             </div>
           </div>
-        </div>
-        <div className='right-top-dash'>
+        </motion.div>
+        <motion.div 
+         initial={{scale: 0}}
+         animate={{ scale: 1 }}
+         transition={{ duration: 1 }}
+        
+        className='right-top-dash'>
         <div className='calendar-container'>
         <Carousel interval={2000} infiniteLoop={true} showStatus={false} showArrows={true} showIndicators={true} showThumbs={false} autoPlay >
           <Calendar
@@ -44,7 +53,7 @@ const topDashboard = (props) => {
         </div>
         </Carousel>
       </div>
-        </div>
+        </motion.div>
       </section>
     
    

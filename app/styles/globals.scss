@@ -218,15 +218,16 @@
 
 .logo {
   position: relative;
+  margin-bottom: 50px;
   
 }
 
 .logo.dark h1 {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   width: 200px;
   position: absolute;
   left: 50px;
-  top: 50%;
+  top: 43%;
   margin-top: -16px;
   font-weight: bold;
   color: white;
@@ -234,11 +235,11 @@
 
 
 .logo h1 {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   width: 200px;
   position: absolute;
   left: 50px;
-  top: 50%;
+  top: 43%;
   margin-top: -16px;
   font-weight: bold;
   color: '#00303F';
@@ -252,6 +253,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
 }
 
 .navbar-container li{
@@ -269,6 +271,8 @@
   transition: background .5s;
 
 }
+
+
 
 .navbar-container li:hover{
 
@@ -291,6 +295,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     font-weight: 500;
     color: white;
@@ -340,6 +346,8 @@ body {
 }
 
 .nav-dash {
+  margin-top: 20px;
+
   display: flex;
 }
 
@@ -1163,7 +1171,7 @@ $duration: 80s;
 .layer
 {
     width: 100%;
-    background-color: #ebf7fc;
+    background-color: black;
     transition: 0.3s ease all;
     z-index: 1;
 }

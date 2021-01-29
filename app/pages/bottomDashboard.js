@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faSortDown, faLongArrowAltRight, faDotCircle  } from '@fortawesome/free-solid-svg-icons';
 import { PieChart } from 'react-minimal-pie-chart';
- 
+ import {motion} from 'framer-motion';
 
 
 
@@ -11,7 +11,12 @@ const bottomDashboard = (props) => {
 
   return (
     <React.Fragment>
-      <div className='bottom-dash-container'>
+      <motion.div 
+          initial={{y: 500}}
+          animate={{y: 0 }}
+          transition={{duration: 1}}
+      
+      className='bottom-dash-container'>
         <div className='left-bottom-dash-flex'>
         <div className='left-bottom-dash'>
           <div className='top-left-bottom-dash-label'>
@@ -116,7 +121,7 @@ const bottomDashboard = (props) => {
           </div>
          </div>
         </div>
-      </div>
+      </motion.div>
      
     </React.Fragment>
   )

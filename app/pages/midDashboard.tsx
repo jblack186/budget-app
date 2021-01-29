@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV, faHome, faShoppingBag, faDollarSign} from '@fortawesome/free-solid-svg-icons'
-
+import {motion} from 'framer-motion';
 
 
 const MidDashboard = (props) => {
@@ -9,7 +9,12 @@ const MidDashboard = (props) => {
 
   return (
     <React.Fragment>
-      <div className='mid-dash-container'>
+      <motion.div 
+           initial={{x: 1300}}
+           animate={{x: 0}}
+           transition={{duration: 1}}
+      
+      className='mid-dash-container'>
          <div className='mid-dash'>
           <div className='mid-dash-flex'>
             <div className='needs-container'>
@@ -62,7 +67,7 @@ const MidDashboard = (props) => {
           </div>
         </div>
 
-      </div>
+      </motion.div>
      
     </React.Fragment>
   )
