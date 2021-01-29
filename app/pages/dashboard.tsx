@@ -5,6 +5,7 @@ import Bottomdashboard from './bottomDashboard';
 import Navbar from './navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {motion} from 'framer-motion';
 
 
 
@@ -89,16 +90,36 @@ useEffect(() => {
 
             </div>
             <div className='dash-labels'>
-              <p className='dash-account'>Account</p>
-              <p className='dash-calendar'>Calendar</p>
+              <motion.p 
+                 initial={{opacity: 0}}
+                 animate={{opacity: 1 }}
+                 transition={{duration: 1}}
+              
+              className='dash-account'>Account</motion.p>
+              <motion.p 
+                   initial={{opacity: 0}}
+                   animate={{opacity: 1 }}
+                   transition={{duration: 1}}
+              
+              className='dash-calendar'>Calendar</motion.p>
             </div>
             <TopDashboard />
             <div className='dash-labels'>
-              <p>Monitoring</p>
+              <motion.p
+                  initial={{opacity: 0}}
+                  animate={{opacity: 1 }}
+                  transition={{duration: 1}}
+              
+              >Monitoring</motion.p>
             </div>
             <MidDashboard dark={dark} />
             <div className='dash-labels'>
-              <p>Transactions</p>
+              <motion.p
+                   initial={{opacity: 0}}
+                   animate={{opacity: 1 }}
+                   transition={{duration: 1}}
+              
+              >Transactions</motion.p>
             </div>
             <Bottomdashboard dark={dark} />
           </section>

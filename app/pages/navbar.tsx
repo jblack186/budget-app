@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUser, faCog, faSignOutAlt, faSignInAlt  } from '@fortawesome/free-solid-svg-icons';
-
+import {motion} from 'framer-motion';
 
 
 const Navbar = (props) => {
@@ -22,27 +22,53 @@ const Navbar = (props) => {
                             </g>
                         </svg>
                         <h1>in-hand.IO</h1>
-                        </div>
-          <li>
+                       </div>
+                       
+          <motion.li
+                    initial={{x: -300}}
+          animate={{x: 0 }}
+          transition={{duration: 1}}
+
+          >
             <FontAwesomeIcon className={props.dark ? 'home-icon-dark' : 'home-icon'}  icon={faHome} />
             <p>Home</p>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+                    initial={{x: -300}}
+          animate={{x: 0 }}
+          transition={{duration: 1}}
+
+          >
             <FontAwesomeIcon  className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faUser} />
             <p>Account</p>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+                    initial={{x: -300}}
+          animate={{x: 0 }}
+          transition={{duration: 1}}
+
+          >
             <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'}icon={faCog} />
             <p>Settings</p>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+                    initial={{x: -300}}
+          animate={{x: 0 }}
+          transition={{duration: 1}}
+
+          >
             <FontAwesomeIcon   className={props.dark ? 'home-icon-dark' : 'home-icon'} icon={faSignInAlt} />
             <p>Sign in</p>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+                    initial={{x: -300}}
+          animate={{x: 0 }}
+          transition={{duration: 1}}
+
+          >
             <FontAwesomeIcon   className={props.dark ? 'home-icon-dark out' : 'home-icon out'} icon={faSignOutAlt} />
             <p>Sign out</p>
-          </li>
+          </motion.li>
           </div>
 
         </ul>
