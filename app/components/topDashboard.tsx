@@ -49,7 +49,7 @@ const topDashboard = (props) => {
           <p>Keep your eyes on the prize and set your saving goals here. Use the calendar to save up for your next vacation or a rainy day.</p>
           <button className='set-goals'>Set goals</button>
           </div>
-          <img id='calendar' src='./calendar.png' alt='calendar' />
+          <img  width="400" height="400" id='calendar' src='./calendar.png' alt='calendar' />
         </div>
         </Carousel>
       </div>
