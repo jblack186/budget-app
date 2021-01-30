@@ -1,8 +1,8 @@
 import React,{useState, useEffect} from 'react';
-import TopDashboard from './topDashboard';
-import MidDashboard from './midDashboard';
-import Bottomdashboard from './bottomDashboard';
-import Navbar from './navbar';
+import TopDashboard from '../components/topDashboard';
+import MidDashboard from '../components/midDashboard';
+import Bottomdashboard from '../components/bottomDashboard';
+import Navbar from '../components/navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import {motion} from 'framer-motion';
@@ -12,7 +12,6 @@ import {motion} from 'framer-motion';
 const Dashboard = ({news}) => {
   const [dark, setDark] = useState(false);
   const [text, setText] = useState('Light mode');
-console.log('news', news)
 
 const article =  news.docs.map(art => {
   if (art.abstract) {
@@ -30,12 +29,11 @@ const url =  news.docs.map(art => {
 
 const mode = () => {
   setDark(!dark);
-  console.log(dark)
 }
 //Settting dark or light mode when 'dark' state is called
 useEffect(() => {
   if (dark) {
-    document.body.style.background = '#040305'
+    document.body.style.background = '#16213e'
     setText('Dark mode')
   } else if(!dark){
     document.body.style.background = '#F8F8F8'
@@ -55,12 +53,12 @@ useEffect(() => {
           <div className="ticker-wrap">
             <div className="ticker">
             <a href={url[0]} target={url[0]}><div className="ticker__item"><div className='ticker-it'>{article[0]}<p className='ticker-text'>click to read             
-            </p><img className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
-            <a href={url[1]} target={url[1]}><div className="ticker__item"><div className='ticker-it'>{article[1]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
-            <a href={url[2]} target={url[2]} className='ticker-text'><div className="ticker__item"><div className='ticker-it'>{article[2]}<p className='ticker-text'>click to read</p><img  className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
-              <a href={url[3]} target={url[3]}><div className="ticker__item"><div className='ticker-it'>{article[3]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
-              <a href={url[4]} target={url[4]}><div className="ticker__item"><div className='ticker-it'>{article[4]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
-              <a href={url[5]} target={url[5]}><div className="ticker__item"><div className='ticker-it'>{article[5]}<p className='ticker-text'>click to read</p><img className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+            </p><img  width="400" height="400" className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+            <a href={url[1]} target={url[1]}><div className="ticker__item"><div className='ticker-it'>{article[1]}<p className='ticker-text'>click to read</p><img  width="400" height="400" className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+            <a href={url[2]} target={url[2]} className='ticker-text'><div className="ticker__item"><div className='ticker-it'>{article[2]}<p className='ticker-text'>click to read</p><img  width="400" height="400" className='news-logo' src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[3]} target={url[3]}><div className="ticker__item"><div className='ticker-it'>{article[3]}<p className='ticker-text'>click to read</p><img width="400" height="400" className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[4]} target={url[4]}><div className="ticker__item"><div className='ticker-it'>{article[4]}<p className='ticker-text'>click to read</p><img width="400" height="400" className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
+              <a href={url[5]} target={url[5]}><div className="ticker__item"><div className='ticker-it'>{article[5]}<p className='ticker-text'>click to read</p><img width="400" height="400" className='news-logo'  src='./logo.svg' alt='logo' style={{ height: '25px'}}/></div></div></a>
 
             </div>
           </div>

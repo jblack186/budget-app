@@ -53,7 +53,7 @@ const WelcomeThree = (props) => {
                   - .right-home-container is z index is position on the outer layer
             
             */}
-            <Button
+            <a href='/dashboard'><Button
               {...ButtonSetting}
               mt={5}
               backgroundColor='#00303F'
@@ -66,8 +66,8 @@ const WelcomeThree = (props) => {
               }}
               
             >
-              Authorize
-            </Button>
+              To dashboard
+            </Button></a>
           </Box>
 
 
