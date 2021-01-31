@@ -15,6 +15,9 @@ type FlexProps = {
     maxWidth: String;
     margin: String;
     zIndex: String;
+    position: String;
+    top: String;
+    left: String;
 }
 
 export const FlexSetting: FlexProps = {

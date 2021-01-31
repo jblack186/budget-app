@@ -26,14 +26,13 @@ const url =  news.docs.map(art => {
 })
 
 
-
 const mode = () => {
   setDark(!dark);
 }
 //Settting dark or light mode when 'dark' state is called
 useEffect(() => {
   if (dark) {
-    document.body.style.background = '#16213e'
+    document.body.style.background = '#080e1c'
     setText('Dark mode')
   } else if(!dark){
     document.body.style.background = '#F8F8F8'
