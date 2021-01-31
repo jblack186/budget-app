@@ -1,4 +1,10 @@
 
+body {
+  font-family: 'Nunito Sans', sans-serif;
+    background: #F8F8F8;
+}
+
+
 #bg-cover {
   position: absolute;
   right: 0;
@@ -208,16 +214,14 @@
 /* Navbar */
 
 .navbar-side-container {
-  margin: 0 auto;
-  width: 90%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 50px;
   background: #00303F;
   display: flex;
   justify-content: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  position: relative;
-
+  z-index: 99999999999;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -237,6 +241,17 @@
 
 }
 
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-logo img {
+  margin-right: 5px;
+  width: 30px;
+}
+
 .menu-bars {
   cursor: pointer;
 }
@@ -248,7 +263,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
+  width: 100%;
 
 }
 
@@ -386,19 +401,19 @@ li:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
+  width: 100%;
 }
 
 .navbar-container li{
   list-style: none;
   display: flex;
-  border-radius: 20px;
+  border-radius: 19px;
   align-items: center;
   cursor: pointer;
   font-weight: 500;
   color: #00303F;
   width: 95%;
-  height: 50px;
+  height: 55px;
   justify-content: space-evenly;
   background: none;
   transition: background .5s;
@@ -458,10 +473,6 @@ li:hover {
 
 /* Top Dashboard */
 
-body {
-  font-family: 'Nunito Sans', sans-serif;
-    background: #F8F8F8;
-}
 
 
 .full-dashboard-contain {
@@ -476,6 +487,14 @@ body {
 .stock-bar {
   height: 50px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .stock-bar{
+    display: none;
+
+    }
+}
+
 
 .nav-dash {
   margin-top: 20px;
@@ -499,6 +518,7 @@ body {
 @media only screen and (max-width: 1025px) {
   .nav-holder {
     width: 100%;
+    margin-bottom: 35px;
   }
 }
 
@@ -1221,7 +1241,7 @@ $duration: 80s;
   padding-bottom: 50px;
   margin: 0 auto;
   width: 90%;
-  background: #0a043c;
+  background: #05031b;
   border-radius: 10px;
 }
 
@@ -1449,3 +1469,161 @@ $duration: 80s;
   width: 70px;
   height: 70px;
 }
+
+/* Account page styling  */
+
+// .account-container {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+//   height: 100vh;
+//   padding-top: 50px;
+  
+// }
+
+// .nav-account-holder {
+//   width: 10%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// @media only screen and (max-width: 1025px) {
+//   .nav-account-holder {
+//    display: none;
+//   }
+  
+//   }
+
+//   .mobile-nav-account-holder {
+//     display: block;
+//    }
+
+//   @media only screen and (min-width: 1025px) {
+//     .mobile-nav-account-holder {
+//      display: none;
+//     }
+    
+//     }
+  
+
+
+
+// .account-budget-holder {
+//   width: 90%;
+//   height: 100%;
+//   background: #EEEFF3;
+//   border-radius: 10px;
+//   display: flex;
+
+// }
+
+// @media only screen and (max-width: 1025px) {
+//   .account-budget-holder{
+//     width: 100%;
+
+//     }
+// }
+
+
+
+// .account-holder {
+//   padding-top: 80px;
+//   width: 60%;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: flex-start;
+
+
+// }
+
+.account-pic-holder {
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  object-fit: cover;
+
+}
+
+@media only screen and (max-width: 1025px) {
+  .account-pic-holder{
+    width: 30px;
+    height: 30px;
+    border-radius: 150px;
+    object-fit: cover;
+  
+    }
+}
+
+.new {
+  background: #43D8C9;
+  height: 35px;
+  width: 140px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;;
+}
+
+
+// .user-info {
+//   line-height: 40px;
+// }
+
+// .user-name {
+//   font-size: 2rem;
+//   font-weight: 500;
+// }
+
+// .pic-form {
+//   display: flex;
+//   align-items: center;
+//   font-size: .9rem;
+
+//   p {
+//     margin-right: 10px;
+//   }
+// }
+
+
+// .budget-holder {
+//   width: 30%;
+
+// }
+
+[type="file"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+
+  + label {
+    margin-top: 20px;
+    background: #16213e;
+    color: white;
+    padding: 10px;
+    border-radius: 19px;
+    transition-duration: .5s;
+    cursor: pointer;
+    // File upload button styles
+  }
+
+  &:focus + label,
+  + label:hover {
+    background: #16213ed3;
+
+    // File upload hover state button styles
+  }
+
+  &:focus + label {
+    color: #16213e;
+    // File upload focus state button styles
+  }
+}
+
+
