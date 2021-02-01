@@ -19,13 +19,13 @@ const Account = () => {
     const [pieSavingsHolder, setPieSavingsHolder] = useState(pieSavings)
     const [pieSavingsTwoHolder, setPieSavingsTwoHolder] = useState(pieSavingsTwo)
     const [pieSavingsThreeHolder, setPieSavingsThreeHolder] = useState(pieSavingsThree)
-  
+
     const [total, setTotal] = useState(100)
     const changeValue = (e) => {
 
-      
-        
-     
+
+
+
         setPieSavingsHolder(Number(e.target.value))
         setTotal((total - pieSavingsHolder + Number(e.target.value)))
 
@@ -43,17 +43,21 @@ const Account = () => {
         setTotal((total - pieSavingsThreeHolder + Number(e.target.value)))
     }
 
-console.log('his', pieSavingsTwoHolder)
-console.log('total', total, typeof(total))
-const changeBudget = (e) => {
-    if (total > 100 || total < 100) {
-        alert("Total must equal 100. Adjust your budget values.")
-    } else {
-        setPieSavings(pieSavingsHolder);
-        setPieSavingsTwo(pieSavingsTwoHolder);
-        setPieSavingsThree(pieSavingsThreeHolder);
+    console.log('his', pieSavingsTwoHolder)
+    console.log('total', total, typeof (total))
+    const changeBudget = (e) => {
+        if (total > 100 || total < 100) {
+            alert("Total must equal 100. Adjust your budget values.")
+        } else {
+            setPieSavings(pieSavingsHolder);
+            setPieSavingsTwo(pieSavingsTwoHolder);
+            setPieSavingsThree(pieSavingsThreeHolder);
+        }
     }
-}
+
+    function percentage(num, per) {
+        return (num / 100) * per;
+    }
 
     return (
         <BoxWrapper>
@@ -86,7 +90,7 @@ const changeBudget = (e) => {
                         <Flex
                             margin='0 auto'
                             height='50%'
-                            width='80%'
+                            width='70%'
                             justifyContent='space-around'
                             alignItems='center'
                         >
@@ -132,46 +136,75 @@ const changeBudget = (e) => {
 
                     </Flex>
                     <Flex
-                        width='30%'
+                        width='40%'
                         height='100%'
                         borderLeft='solid 2px #d5e4e8'
                         borderTopLeftRadius='19px'
                         flexDir='column'
-                        justifyContent='space-between'
+                        justifyContent='space-around'
                         alignItems='center'
                         boxShadow='-11px 10px 10px 1px #dae9ed'
                     >
-                        <Text>Set Budget Goals</Text>
-
+                        <Text
+                        fontWeight='400'
+                        fontSize='1.2rem'
+                        color='#076E8E'
+                        >Set Budget Goals</Text>
+                        <Flex
+                        alignItems='center'
+                        width='80%'
+                        flexDir='column'
+                        bg='#dae9ed'
+                        padding='25px'
+                        borderRadius='19px'
+                        >
                         <div className="slideContainerThree">
-                            <p>Needs: <span id="value">{pieSavingsThreeHolder}</span></p>
+                            <p>Needs: <span id="value">{pieSavingsThreeHolder}%</span></p>
 
                             <input onChange={changeValueThree} value={pieSavingsThreeHolder} type='range' min='0' max='50' id="myRange" className='sliderThree' />
                         </div>
                         <div className="slideContainerTwo">
-                            <p>Wants: <span id="value">{pieSavingsTwoHolder}</span></p>
+                            <p>Wants: <span id="value">{pieSavingsTwoHolder}%</span></p>
 
                             <input onChange={changeValueTwo} value={pieSavingsTwoHolder} type='range' min='0' max='30' id="myRange" className='sliderTwo' />
                         </div>
                         <div className="slideContainer">
-                            <p>Savings: <span id="value">{pieSavingsHolder}</span></p>
+                            <p>Savings: <span id="value">{pieSavingsHolder}%</span></p>
 
                             <input onChange={changeValue} value={pieSavingsHolder} type='range' min='20' max='100' id="myRange" className='slider' />
                         </div>
+                        </Flex>
+                        <p>% must equal "100": {total}%</p>
+                        <Button
+                        bg='#222831'
+                        color='white'
+                        onClick={changeBudget}>Change budget</Button>
+                        <Flex
+                            width='90%'
+                            justifyContent='space-around'
+                            alignItems='flex-start'
 
+                        >
+                            <PieChart
+                                style={{ width: '150px' }}
+                                data={[
+                                    { title: 'One', value: pieSavingsThree, color: '#43D8C9' },
+                                    { title: 'Two', value: pieSavingsTwo, color: '#076E8E' },
+                                    { title: 'Three', value: pieSavings, color: '#222831' },
+                                ]}
+                            />
+                            <Flex
+                                flexDir='column'
+                                justifyContent='space-between'
+                                height='80%'
+                            >
+                                <Text>Monthly Budget: $3523.34</Text>
+                                <Text color='#43D8C9' fontWeight='bolder'>Needs: {Number(percentage(3523.34, pieSavingsThree).toFixed(2))}</Text>
+                                <Text color='#076E8E' fontWeight='bolder'>Wants: {Number(percentage(3523.34, pieSavingsTwo).toFixed(2))}</Text>
+                                <Text color='#222831' fontWeight='bolder'>Savings: {Number(percentage(3523.34, pieSavings).toFixed(2))}</Text>
 
-
-
-    <p>Total: {total}</p>
-<button onClick={changeBudget}>Change budget</button>
-                        <PieChart
-                            style={{ width: '150px' }}
-                            data={[
-                                { title: 'One', value: pieSavingsThree, color: '#43D8C9' },
-                                { title: 'Two', value: pieSavingsTwo, color: '#076E8E' },
-                                { title: 'Three', value: pieSavings, color: '#222831' },
-                            ]}
-                        />
+                            </Flex>
+                        </Flex>
                     </Flex>
 
                 </Flex>
@@ -185,29 +218,3 @@ const changeBudget = (e) => {
 export default Account;
 
 
-{/* <div className='account-container'>
-<section className='nav-account-holder'>
-    <Navbar />
-</section>
-<section className='mobile-nav-account-holder'>
-    <Navbar />
-</section>
-<div className='account-budget-holder'>
-    <section className='account-holder'>
-    <img src='/userPic.jpg' className='account-pic-holder' />
-        <div className='user-info'>
-            <p className='new'>New member</p>
-            <p className='user-name'>Gabriela Richardson</p>
-            <p>Budget Aggresiveness: Standard</p>
-            <div className="button-wrap">
-            <input type="file" id="file" /> 
-<label for="file">Upload new picture</label></div>
-
-                
-                                        </div>
-    </section>
-    <section className='budget-holder'>
-
-    </section>
-</div>
-</div> */}
