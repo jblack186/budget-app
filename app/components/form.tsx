@@ -33,23 +33,23 @@ const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     console.log(e.currentTarget.email.value)
     const body = {
-      email: e.currentTarget.email.value,
-      name: e.currentTarget.name.value,
-      password: e.currentTarget.password.value,
+        email: e.currentTarget.email.value,
+        name: e.currentTarget.name.value,
+        password: e.currentTarget.password.value,
     };
     const res = await fetch('/api/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
     });
     if (res.status === 201) {
-      const userObj = await res.json();
-      // writing our user object to the state
-    //   mutate(userObj);
+        const userObj = await res.json();
+        // writing our user object to the state
+        //   mutate(userObj);
     } else {
-    //   setErrorMsg(await res.text());
+        //   setErrorMsg(await res.text());
     }
-  };
+};
 
 
 
@@ -161,34 +161,34 @@ const handleLoginSubmit = async (e) => {
     e.preventDefault();
     console.log(e.currentTarget.email.value)
     const body = {
-      email: e.currentTarget.email.value,
-      name: e.currentTarget.name.value,
-      password: e.currentTarget.password.value,
+        email: e.currentTarget.email.value,
+        name: e.currentTarget.name.value,
+        password: e.currentTarget.password.value,
     };
     const res = await fetch('/api/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
     });
     if (res.status === 201) {
         const userObj = await res.json();
-      // writing our user object to the state
-    //   mutate(userObj);
+        // writing our user object to the state
+        //   mutate(userObj);
     } else {
-    //   setErrorMsg(await res.text());
+        //   setErrorMsg(await res.text());
     }
-  };
+};
 
 
 
 
 export const LoginForm: React.FC<{}> = () => {
-    
+
     // show password
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
-//   const [errorMsg, setErrorMsg] = useState('');
-  
+    //   const [errorMsg, setErrorMsg] = useState('');
+
 
     const initialValues: FormProps = {
         email: '',
@@ -198,20 +198,20 @@ export const LoginForm: React.FC<{}> = () => {
     async function handleLoginSubmit(e) {
         e.preventDefault();
         const body = {
-          email: e.currentTarget.email.value,
-          password: e.currentTarget.password.value,
+            email: e.currentTarget.email.value,
+            password: e.currentTarget.password.value,
         };
         const res = await fetch('/api/auth', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
         });
         if (res.status === 200) {
-          const userObj = await res.json();
+            const userObj = await res.json();
         } else {
-        //   setErrorMsg('Incorrect username or password. Try again!');
+            //   setErrorMsg('Incorrect username or password. Try again!');
         }
-      }
+    }
 
     return (
         <div>

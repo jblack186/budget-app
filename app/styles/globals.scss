@@ -1627,3 +1627,105 @@ $duration: 80s;
 }
 
 
+
+.slideContainer {
+  width: 75%;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+}
+
+.slideContainerTwo {
+  width: 75%;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+}
+
+
+.slideContainerThree {
+  width: 75%;
+  position: relative;
+
+  input {
+    width: 100%;
+  }
+}
+
+
+.slider {
+  margin-bottom: 50px;
+
+}
+
+.sliderTwo {
+  margin-bottom: 50px;
+
+}
+
+.sliderThree {
+  margin-bottom: 50px;
+
+}
+
+
+.slider::after {
+  content: '20';
+  color: black;
+  font-size: 1rem;
+  left: 0;
+  top: 40%;
+  position: absolute
+}
+
+.slider::before {
+  content: '100';
+  color: black;
+  font-size: 1rem;
+  right: 0;
+  top: 40%;
+  position: absolute
+
+}
+
+.sliderTwo::after {
+  content: '0';
+  color: black;
+  font-size: 1rem;
+  left: 0;
+  top: 40%;
+  position: absolute
+}
+
+.sliderTwo::before {
+  content: '30';
+  color: black;
+  font-size: 1rem;
+  right: 0;
+  top: 40%;
+  position: absolute
+
+}
+
+.sliderThree::after {
+  content: '0';
+  color: black;
+  font-size: 1rem;
+  left: 0;
+  top: 40%;
+  position: absolute
+}
+
+.sliderThree::before {
+  content: '50';
+  color: black;
+  font-size: 1rem;
+  right: 0;
+  top: 40%;
+  position: absolute
+
+}

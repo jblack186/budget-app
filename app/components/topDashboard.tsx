@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const topDashboard = (props) => {
   const [value, onChange] = useState(new Date());
@@ -10,11 +10,11 @@ const topDashboard = (props) => {
   return (
     <React.Fragment>
       <section className='top-dash-container'>
-        <motion.div 
-        initial={{scale: 0}}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1 }}
-        className='left-top-dash'>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
+          className='left-top-dash'>
           <div className='left-top-dash-flex'>
             <div className='main-account-container'>
               <p className='main-account'>Main account</p>
@@ -31,32 +31,32 @@ const topDashboard = (props) => {
             </div>
           </div>
         </motion.div>
-        <motion.div 
-         initial={{scale: 0}}
-         animate={{ scale: 1 }}
-         transition={{ duration: 1 }}
-        
-        className='right-top-dash'>
-        <div className='calendar-container'>
-        <Carousel interval={2000} infiniteLoop={true} showStatus={false} showArrows={true} showIndicators={true} showThumbs={false} autoPlay >
-          <Calendar
-          onChange={onChange}
-          value={value}
-        />
-        <div className='calendar-content'>
-          <div className='calendar-flex'>
-          <h3>Plan ahead</h3>
-          <p>Keep your eyes on the prize and set your saving goals here. Use the calendar to save up for your next vacation or a rainy day.</p>
-          <button className='set-goals'>Set goals</button>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
+
+          className='right-top-dash'>
+          <div className='calendar-container'>
+            <Carousel interval={2000} infiniteLoop={true} showStatus={false} showArrows={true} showIndicators={true} showThumbs={false} autoPlay >
+              <Calendar
+                onChange={onChange}
+                value={value}
+              />
+              <div className='calendar-content'>
+                <div className='calendar-flex'>
+                  <h3>Plan ahead</h3>
+                  <p>Keep your eyes on the prize and set your saving goals here. Use the calendar to save up for your next vacation or a rainy day.</p>
+                  <button className='set-goals'>Set goals</button>
+                </div>
+                <img width="400" height="400" id='calendar' src='./calendar.png' alt='calendar' />
+              </div>
+            </Carousel>
           </div>
-          <img  width="400" height="400" id='calendar' src='./calendar.png' alt='calendar' />
-        </div>
-        </Carousel>
-      </div>
         </motion.div>
       </section>
-    
-   
+
+
     </React.Fragment>
   )
 
