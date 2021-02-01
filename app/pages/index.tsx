@@ -8,7 +8,7 @@ import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
 
-export const config = { unstable_runtimeJS: false}
+export const config = { unstable_runtimeJS: false }
 
 const Index: React.FC<{}> = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
@@ -39,7 +39,7 @@ const Index: React.FC<{}> = () => {
                  Budgeting,<br />
                  Made Simple
             </Heading>
-            <Text mt={4} fontSize={!isLargerThan786 ? '3vmin': '5vmin'} maxWidth='260px'>
+            <Text mt={4} fontSize={!isLargerThan786 ? '3vmin' : '5vmin'} maxWidth='260px'>
               We help set your goals
               so you don’t have too.
             </Text>
@@ -64,26 +64,26 @@ const Index: React.FC<{}> = () => {
                 background: "#FFFFFF",
                 color: '#000'
               }}
-              
+
             >
               Let's Start
             </Button></Link>
           </Box>
         </div>
         <div className="right-home-container">
-        <div>
-          <img
-            className='rectangle-banner spotify'
-            src="./Spotify (1).png"
-            alt='spotify-banner' />
-                      <img
-            className='rectangle-banner loan'
-            src="./loan.png"
-            alt='spotify-banner' />
-          <img
-            className='rectangle-banner savings'
-            src="./savings.png"
-            alt='spotify-banner' />
+          <div>
+            <img
+              className='rectangle-banner spotify'
+              src="./Spotify (1).png"
+              alt='spotify-banner' />
+            <img
+              className='rectangle-banner loan'
+              src="./loan.png"
+              alt='spotify-banner' />
+            <img
+              className='rectangle-banner savings'
+              src="./savings.png"
+              alt='spotify-banner' />
 
           </div>
 
@@ -95,7 +95,7 @@ const Index: React.FC<{}> = () => {
           />
         </div>
       </BoxWrapper>
-    </React.Fragment> 
+    </React.Fragment>
   )
 
 }

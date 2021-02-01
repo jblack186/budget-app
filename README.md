@@ -37,4 +37,5 @@ User should be able to easily see recent transactions on dashboard.
 [Kevin Davis](mailto:whomst@kevind.xyz)
 [Jamison Blackwell](mailto:blackwellj1040@gmail.com)
 [Nicholas Degrate](mailto:nicholasdegrate@gmail.com)
-A
+#170BA2
+#201F55
