@@ -1603,25 +1603,31 @@ $duration: 80s;
   width: 1px;
 
   + label {
-    margin-top: 20px;
+    width: 152px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
     background: #16213e;
     color: white;
-    padding: 10px;
-    border-radius: 19px;
+    border-radius: 8px;
     transition-duration: .5s;
+    font-weight: bolder;
     cursor: pointer;
     // File upload button styles
   }
 
   &:focus + label,
   + label:hover {
-    background: #16213ed3;
+    color: white;
+    background: #00303F;
 
     // File upload hover state button styles
   }
 
   &:focus + label {
-    color: #16213e;
+    color: white;
+    background: #00303F;
     // File upload focus state button styles
   }
 }
