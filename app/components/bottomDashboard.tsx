@@ -80,16 +80,16 @@ const bottomDashboard = (props) => {
             </div>
             <div className='bottom-right-bottom-dash'>
               <div>
-                <p className='period'>Daily</p>
-                <p className='expenses'>$324,21</p>
+                <p className='period'>S/Goals</p>
+                <p className='goals'>-$317.10</p>
               </div>
               <div>
-                <p className='period'>Weekly</p>
-                <p className='expenses'>$1354,21</p>
+                <p className='period'>Goals</p>
+                <p className='goals'>Not being met</p>
               </div>
               <div>
                 <p className='period'>Monthly</p>
-                <p className='expenses'>$7,324,63</p>
+                <p className='expenses'>$3523.34</p>
               </div>
             </div>
             <div className='expense-visual'>
@@ -98,9 +98,9 @@ const bottomDashboard = (props) => {
                 <PieChart
                   style={{ width: '150px' }}
                   data={[
-                    { title: 'One', value: 10, color: '#43D8C9' },
-                    { title: 'Two', value: 15, color: '#076E8E' },
-                    { title: 'Three', value: 20, color: '#222831' },
+                    { title: 'One', value: 50, color: '#43D8C9' },
+                    { title: 'Two', value: 39, color: '#076E8E' },
+                    { title: 'Three', value: 11, color: '#222831' },
                   ]}
                 />
                 <div>

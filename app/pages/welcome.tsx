@@ -42,7 +42,7 @@ const Welcome = (props) => {
                 Welcome to<br />
                  In-Hand.io
             </Heading>
-              <Text mt={4} fontSize={!isLargerThan786 ? '5.5vmin' : '5vmin'} maxWidth='560px'>
+              <Text mt={4} fontSize={!isLargerThan786 ? '4vmin' : '3.5vmin'} maxWidth='560px'>
                 Take the guess work out of budgeting with an easy "50/30/20" rule
             </Text>
               {/* 

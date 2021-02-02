@@ -71,7 +71,7 @@ const Dashboard = ({ news }) => {
           {/* Light and Dark Mode Button */}
           <section className={!dark ? 'dashboard-container' : 'dashboard-container-dark'}>
             <div className='profile-mode'>
-              <p className='name'>Hello Jamison!</p>
+              <p className='name'>Hello Gabriela!</p>
               <FontAwesomeIcon className='profile-pic-holder' icon={faUser} />
 
               <div className='mode-container'>
@@ -109,7 +109,7 @@ const Dashboard = ({ news }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
 
-              >Monitoring</motion.p>
+              >Budget Monitoring</motion.p>
             </div>
             <MidDashboard dark={dark} />
             <div className='dash-labels'>

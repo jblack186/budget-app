@@ -40,7 +40,7 @@ const WelcomeThree = (props) => {
                  Connect to<br />
                  Plaid Now
             </Heading>
-            <Text mt={4} fontSize={!isLargerThan786 ? '5.5vmin': '5vmin'} maxWidth='560px'>
+            <Text mt={4} fontSize={!isLargerThan786 ? '4vmin': '3.5vmin'} maxWidth='560px'>
               We made it as easy & safe as possible to access your finances
             </Text>
             {/* 

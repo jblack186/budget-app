@@ -90,11 +90,9 @@ const Navbar = (props) => {
       <ul>
         <div className={props.dark === true ? 'navbar-container dark' : 'navbar-container'}>
           <motion.div
-            animate={{
-
-              rotate: [0, 360, 360, 0],
-
-            }}
+            // animate={{
+            //   rotate: [0, 360, 360, 0],
+            // }}
             className={props.dark === true ? 'logo dark' : 'logo'}>
             {/* put this svg in a file */}
             <svg width="50" height="84" viewBox="0 0 88 84" fill="none" xmlns="http://www.w3.org/2000/svg">
