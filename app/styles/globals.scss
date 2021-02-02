@@ -329,6 +329,7 @@ li:hover {
 
 }
 
+
 .nav-close {
   cursor: pointer;
   font-size: 2rem;
@@ -839,7 +840,7 @@ box-shadow: rgba(13, 14, 15, 0.2) 0px 8px 24px;}
 .needs-container {
   display: flex;
   flex-direction: column;
-  height: 70%;
+  height: 55%;
   justify-content: space-between;
 }
 
@@ -874,17 +875,28 @@ box-shadow: rgba(13, 14, 15, 0.2) 0px 8px 24px;}
 
 
 .card-icons {
+  width: 40%;
   display: flex;
-  height: 70%;
+  height: 80%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
+.percent-circle {
+  width: 75%;
+}
+
+.CircularProgressbar-background {
+  fill: green;
+}
 @media only screen and (max-width: 968px) {
   .card-icons {
     display: flex;
-    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
     flex-direction: column;
   }
   }
@@ -895,6 +907,21 @@ box-shadow: rgba(13, 14, 15, 0.2) 0px 8px 24px;}
     font-weight: bolder;
 
   }
+
+  .wants-category {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bolder;
+
+  }
+
+  .savings-category {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bolder;
+
+  }
+
 
 
 .total-needs {
@@ -1103,11 +1130,16 @@ box-shadow: rgba(13, 14, 15, 0.2) 0px 8px 24px;}
 
 .period {
   padding-bottom: 10px;
-  color: #43D8C9;
+  color: #222831;
 }
 
 .expenses {
   font-weight: bolder;
+}
+
+.goals {
+  font-weight: bolder;
+  color: red;
 }
 
 .expense-visual {
@@ -1537,8 +1569,8 @@ $duration: 80s;
 // }
 
 .account-pic-holder {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 150px;
   object-fit: cover;
 

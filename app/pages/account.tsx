@@ -12,6 +12,8 @@ import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { PieChart } from 'react-minimal-pie-chart';
 import ReactSlider from 'react-slider';
 import Axios from 'axios';
+import 'react-credit-cards/es/styles-compiled.css';
+import Cards from 'react-credit-cards';
 
 const Account = () => {
     const [pieSavings, setPieSavings] = useState(20)
@@ -23,6 +25,8 @@ const Account = () => {
     const [type, setType] = useState('Standard')
     const [imageSelected, setImageSelected] = useState('')
     const [newImage, setNewImage] = useState('')
+    const [modalShow, setModalShow] = useState(false);
+
 
     //total budget percentage
     const [total, setTotal] = useState(100)
@@ -74,19 +78,48 @@ const Account = () => {
 
     const uploadImage = (files) => {
         if (imageSelected) {
-        const formData = new FormData()
-        formData.append("file", imageSelected)
-        formData.append("upload_preset", "lwuwud4r")
-        Axios.post("https://api.cloudinary.com/v1_1/drgfyozzd/image/upload", formData)
-            .then((res) => {
-                console.log(res)
-                setNewImage(res.data.url)
-            })
+            const formData = new FormData()
+            formData.append("file", imageSelected)
+            formData.append("upload_preset", "lwuwud4r")
+            Axios.post("https://api.cloudinary.com/v1_1/drgfyozzd/image/upload", formData)
+                .then((res) => {
+                    console.log(res)
+                    setNewImage(res.data.url)
+                })
         }
     }
 
+    var chart = bb.generate({
+        data: {
+          columns: [
+            ["savings", 20],
+            ["wants", 30],
+            ["Needs", 50],
+          ],
+          type: "donut",
+          onclick: function(d, i) {
+          console.log("onclick", d, i);
+         },
+          onover: function(d, i) {
+          console.log("onover", d, i);
+         },
+          onout: function(d, i) {
+          console.log("onout", d, i);
+         }
+        },
+        donut: {
+          title: "100"
+        },
+        bindto: "#donut-chart"
+      });
+      
+      
+      
+
     return (
         <BoxWrapper>
+            <div id="donut-chart"></div>
+
             <Flex
                 width='100%'
                 alignItems='flex-end'
@@ -122,11 +155,11 @@ const Account = () => {
                         >
                             <img src={newImage === '' ? 'user.svg' : newImage} className='account-pic-holder' />
 
-                            <Flex 
+                            <Flex
                                 flexDir='column'
                                 height='59%'
                                 justifyContent='space-between'
-                            className='user-info'>
+                                className='user-info'>
                                 <p className='new'>New member</p>
                                 <p className='user-name'>Gabriela Richardson</p>
                                 <p>Budget Aggresiveness: {type}</p>
@@ -154,11 +187,7 @@ const Account = () => {
                             flexDir='column'
                         >
                             <Box
-                                boxShadow='sm'
-                                width='50%'
-                                height='200px'
-                                bg='white'
-                                borderRadius='19px'
+                                
 
                             >
                                 <Flex
@@ -167,25 +196,36 @@ const Account = () => {
                                     alignItems='center'
                                     flexDir='column'
                                 >
+                                    <Flex
+                                    w='100%'
+                                    margin='0 auto'
+                                    justifyContent='center'
+                                    >
                                     <Text
+                                    textAlign='center'
                                         margin='0 auto'
                                         width='80%'
-                                        justifyContent='flex-start'
-                                    >My Cards</Text>
+                                        justifyContent='center'
+                                        fontWeight='bold'
+                                        paddingBottom='10px'
+
+                                    >My Cards</Text></Flex>
                                     <Flex
                                         alignItems='center'
                                         margin='0 auto'
-                                        width='80%'
+                                        width='100%'
                                         justifyContent='space-between'
+                                        paddingBottom='10px'
                                     >
-                                        <img src='./card.png' alt='a card' />
-                                        <div>
-                                            <Text>People's United Bank</Text>
-                                            <Text
-                                                fontSize='.9rem'
-                                                color='lightgray'
-                                            >**** 7932</Text>
-                                        </div>
+
+                                        <Cards
+                                        $rccs-signature-background='black'
+                                            cvc=''
+                                            expiry=''
+                                            focused=''
+                                            name='Gabriela Richardson'
+                                            number='7972'
+                                        />
                                     </Flex>
                                 </Flex>
                             </Box>
