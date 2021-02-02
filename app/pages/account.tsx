@@ -14,8 +14,11 @@ import ReactSlider from 'react-slider';
 import Axios from 'axios';
 import 'react-credit-cards/es/styles-compiled.css';
 import Cards from 'react-credit-cards';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Modal, Container, Row, Col } from 'react-bootstrap';
 
-const Account = () => {
+const Account = (props) => {
     const [pieSavings, setPieSavings] = useState(20)
     const [pieWants, setPieWants] = useState(30)
     const [pieNeeds, setPieNeeds] = useState(50)
@@ -26,7 +29,8 @@ const Account = () => {
     const [imageSelected, setImageSelected] = useState('')
     const [newImage, setNewImage] = useState('')
     const [modalShow, setModalShow] = useState(false);
-
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     //total budget percentage
     const [total, setTotal] = useState(100)
@@ -89,37 +93,47 @@ const Account = () => {
         }
     }
 
-    var chart = bb.generate({
-        data: {
-          columns: [
-            ["savings", 20],
-            ["wants", 30],
-            ["Needs", 50],
-          ],
-          type: "donut",
-          onclick: function(d, i) {
-          console.log("onclick", d, i);
-         },
-          onover: function(d, i) {
-          console.log("onover", d, i);
-         },
-          onout: function(d, i) {
-          console.log("onout", d, i);
-         }
-        },
-        donut: {
-          title: "100"
-        },
-        bindto: "#donut-chart"
-      });
-      
-      
-      
+    function MydModalWithGrid(props) {
+        return (
+            <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                        Enter New Card
+              </Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="show-grid">
+                    <Container className='align-content-md-center' style={{ height: '50vh' }}>
+                        <Flex
+                            height='80%'
+                            justifyContent='space-around'
+                            flexDir='column'
+                            alignItems='center'
+                        >
+                            <input placeholder='Debit or credit card number' style={{ height: '40px', width: '80%', border: '1px solid gray', borderRadius: '5px' }} />
+                            <input placeholder='Name on card' style={{ height: '40px', width: '80%', border: '1px solid gray', borderRadius: '5px' }} />
+                            <input placeholder='Expiration date ex: 01/23' style={{ height: '40px', width: '80%', border: '1px solid gray', borderRadius: '5px' }} />
+                            <input placeholder='Security code' style={{ height: '40px', width: '80%', border: '1px solid gray', borderRadius: '5px' }} />
+                            <Button
+                                width='80%'
+                                bg='#16213e'
+                                color='white'
+                                marginLeft='5px'
+
+                            >Link Card</Button>
+                        </Flex>
+
+                    </Container>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={props.onHide}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
+
 
     return (
         <BoxWrapper>
-            <div id="donut-chart"></div>
-
             <Flex
                 width='100%'
                 alignItems='flex-end'
@@ -187,7 +201,7 @@ const Account = () => {
                             flexDir='column'
                         >
                             <Box
-                                
+
 
                             >
                                 <Flex
@@ -197,49 +211,75 @@ const Account = () => {
                                     flexDir='column'
                                 >
                                     <Flex
-                                    w='100%'
-                                    margin='0 auto'
-                                    justifyContent='center'
-                                    >
-                                    <Text
-                                    textAlign='center'
+                                        w='100%'
                                         margin='0 auto'
-                                        width='80%'
                                         justifyContent='center'
-                                        fontWeight='bold'
-                                        paddingBottom='10px'
+                                    >
+                                        <Text
+                                            textAlign='center'
+                                            margin='0 auto'
+                                            width='80%'
+                                            justifyContent='center'
+                                            fontWeight='bold'
+                                            paddingBottom='10px'
 
-                                    >My Cards</Text></Flex>
+                                        >My Cards</Text></Flex>
+
                                     <Flex
+                                        className='cards-container'
                                         alignItems='center'
                                         margin='0 auto'
-                                        width='100%'
-                                        justifyContent='space-between'
+                                        width='300px'
+
+                                        justifyContent='center'
                                         paddingBottom='10px'
                                     >
 
-                                        <Cards
-                                        $rccs-signature-background='black'
-                                            cvc=''
-                                            expiry=''
-                                            focused=''
-                                            name='Gabriela Richardson'
-                                            number='7972'
-                                        />
+                                        <Carousel className='bank-cards' interval={2000} infiniteLoop={true} showStatus={false} showArrows={true} showIndicators={true} showThumbs={false} autoPlay >
+
+                                            <Cards
+
+                                                cvc=''
+                                                expiry=''
+                                                focused=''
+                                                name='Gabriela Richardson'
+                                                number='6011'
+                                            />
+
+                                            <Cards
+
+                                                cvc=''
+                                                expiry=''
+                                                focused=''
+                                                name='Gabriela Richardson'
+                                                number='5446'
+                                            />
+
+                                        </Carousel>
+
                                     </Flex>
+
                                 </Flex>
                             </Box>
-                            <Flex
-                                justifyContent='space-between'
-                                alignItems='center'
-                                width='30%'
-                                margin='0 auto'
-                                cursor='pointer'
-                            >
-                                <Text>Add another bank account</Text>
 
-                                <FontAwesomeIcon style={{ color: '#43D8C9' }} className='plus-icon' icon={faPlus} />
-                            </Flex>
+
+                            <Button variant="primary" onClick={() => setModalShow(true)}>
+                                <Flex
+                                    justifyContent='center'
+                                    alignItems='center'
+                                    width='80%'
+
+                                    cursor='pointer'
+                                >
+
+                                    <Text
+                                        paddingRight='5px'
+                                    >Add another bank account</Text><FontAwesomeIcon style={{ color: '#222831', fontSize: '15px', paddingBottom: '3px' }} className='plus-icon' icon={faPlus} />
+                                </Flex>
+                            </Button>
+
+                            <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
+
 
                         </Flex>
 
@@ -284,11 +324,11 @@ const Account = () => {
                             </div>
                         </Flex>
                         <p>% must equal "100": {total}%</p>
-                        <Button
-                            bg='#222831'
-                            color='white'
-                            onClick={changeBudget}>Change budget</Button>
-                        <Flex
+                        <Button variant="primary" onClick={() => setModalShow(true)}>
+                            Launch modal with grid
+      </Button>
+
+                        <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />                        <Flex
                             width='90%'
                             justifyContent='space-around'
                             alignItems='flex-start'
@@ -323,7 +363,6 @@ const Account = () => {
                 </Flex>
 
             </Flex>
-
         </BoxWrapper>
     )
 }
