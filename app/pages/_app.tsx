@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
-
+import { Provider } from "next-auth/client";
 
 // theme 
 import customTheme from '../theme'
@@ -13,10 +13,16 @@ type AppProps = {
 }
 
 const MyApp: React.FC<{ Component, pageProps }> = ({ Component, pageProps }) => {
+
+
   return (
-    <ChakraProvider resetCSS={true} theme={customTheme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <Provider session={pageProps.session}>
+
+      <ChakraProvider resetCSS={true} theme={customTheme}>
+        <Component {...pageProps} />
+        
+      </ChakraProvider>
+     </Provider>
 
   )
 }

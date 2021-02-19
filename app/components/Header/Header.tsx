@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'next/Link';
 import { useMediaQuery } from '@chakra-ui/react';
 import { useRouter } from 'next/router'
+import { signIn, signOut, useSession } from "next-auth/client";
 
 import {
     Flex,
@@ -15,9 +16,10 @@ import {
 import { FlexSetting, ButtonSetting, FlexSettingWelcome } from '../ui/chakra-ui/chakra-settings';
 
 export const Header: React.FC<{}> = ({ }) => {
+    const [session, loading] = useSession();
     const [isLargerThan786] = useMediaQuery("(min-width: 768px)")
     const router = useRouter()
-    console.log('router',router.pathname)
+    console.log('session', session)
     return (
         <React.Fragment>
             <header>
@@ -32,7 +34,7 @@ export const Header: React.FC<{}> = ({ }) => {
                     Type 'String' is not assignable to type 'ResponsiveObject<Margin<ReactText>>'.
                     Index signature is missing in type 'String'.
                 */}
-                <Flex {...router.pathname === '/welcome' ? {...FlexSettingWelcome} : {...FlexSetting}}>
+                <Flex {...router.pathname === '/welcome' ? { ...FlexSettingWelcome } : { ...FlexSetting }}>
                     <Flex zIndex='999999999999999' alignItems="center">
                         <svg width="50" height="84" viewBox="0 0 88 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="88" height="84">
@@ -43,24 +45,25 @@ export const Header: React.FC<{}> = ({ }) => {
                                 <rect width="75.9478" height="30" transform="matrix(0.853237 -0.521524 0.564608 0.825359 3 83.6086)" fill="#00303F" />
                             </g>
                         </svg>
-                        <Heading ml={5} as='h1' size='lg'  zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
+                        <Heading ml={5} as='h1' size='lg' zIndex="9999999999999" fontWeight={600}>in-hand.io</Heading>
                     </Flex>
                     <Wrap spacing={20}>
-                        
-                        <WrapItem display={isLargerThan786 ? 'block' : 'none' } zIndex='999999999999999' alignItems="center">
+
+                        <WrapItem display={isLargerThan786 ? 'block' : 'none'} zIndex='999999999999999' alignItems="center">
                             <Link href='/login'>Login</Link>
                         </WrapItem>
-                        
+
                         <WrapItem display={router.pathname === '/welcome' ? 'none' : 'block'}>
-                            <Link href='/register'>
+                            
                                 <Button
+                                    onClick={signIn}
                                     {...ButtonSetting}
                                 >
                                     Sign Up
                                 </Button>
-                            </Link>
+                            
                         </WrapItem>
-                       
+
                     </Wrap>
                 </Flex>
             </header>

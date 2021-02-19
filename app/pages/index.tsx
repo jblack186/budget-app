@@ -5,10 +5,13 @@ import styled from 'styled-components';
 import { Header } from '../components/Header/Header';
 import { BoxWrapper } from '../components/ui/chakra-ui/chakra-components';
 import { ButtonSetting } from '../components/ui/chakra-ui/chakra-settings';
-
+import Welcome from './welcome';
+import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const Index: React.FC<{}> = () => {
   const [isLargerThan786] = useMediaQuery("(max-width: 768px)")
+  const [session, loading] = useSession();
 
   isLargerThan786 === true;
 
@@ -16,8 +19,17 @@ console.log('truthy', isLargerThan786)
 
   return (
     <React.Fragment>
-      <BoxWrapper>
+      {!session && (
+        <Welcome />
+      )}
+     {session && ( <BoxWrapper>
         <Header />
+        Signed in as {session.user.email} <br />
+            <div>You can now access our super secret pages</div>
+            <button>
+              <Link href="/secret">To the secret</Link>
+            </button>
+            <button onClick={signOut}>sign out</button>
         <div id='bg-cover'>
 
           <Box
@@ -95,6 +107,7 @@ console.log('truthy', isLargerThan786)
           />
         </div>
       </BoxWrapper>
+     )}
     </React.Fragment> 
   )
 
